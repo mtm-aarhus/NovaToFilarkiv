@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1015,3647</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1012,3466</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetFilArkivAccessToken_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -78,13 +78,13 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetFilArkivAccessToken" sap:VirtualizedContainerService.HintSize="634,3582" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetFilArkivAccessToken" sap:VirtualizedContainerService.HintSize="634,3401" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="GetAccessToken" sap:VirtualizedContainerService.HintSize="572,3471" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="GetAccessToken" sap:VirtualizedContainerService.HintSize="572,3290" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="OldTimestamp" />
         <Variable x:TypeArguments="x:String" Name="OldToken" />
@@ -150,7 +150,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:MultipleAssign>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Differencen er : &quot; + Difference]" />
-      <If sap2010:Annotation.AnnotationText="if-statement, som tjekker om tids differencen er under 1.5. Hvis den er over, henter den en ny access token til videre brug" Condition="[Int_Difference &lt;1]" DisplayName="If int_difference below 1.5" sap:VirtualizedContainerService.HintSize="510,1819" sap2010:WorkflowViewState.IdRef="If_1">
+      <If sap2010:Annotation.AnnotationText="if-statement, som tjekker om tids differencen er under 1.5. Hvis den er over, henter den en ny access token til videre brug" Condition="[Int_Difference &lt;1]" DisplayName="If int_difference below 1.5" sap:VirtualizedContainerService.HintSize="510,1638" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -159,7 +159,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="476,532" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence sap:VirtualizedContainerService.HintSize="476,351" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -174,7 +174,6 @@
                 <InArgument x:TypeArguments="x:String">[OldToken]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Anvender den gamle API-key, som er: &quot; + out_Token]" />
           </Sequence>
         </If.Then>
         <If.Else>

@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1014,4048</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1012,3499</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>HTTP_Request_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -114,7 +114,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="HTTP_Request" sap:VirtualizedContainerService.HintSize="744,3983" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="HTTP_Request" sap:VirtualizedContainerService.HintSize="744,3434" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Cookies" />
       <Variable x:TypeArguments="njl:JObject" Name="JObject" />
@@ -127,13 +127,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Edge: KMD Logon - Log på" sap:VirtualizedContainerService.HintSize="682,3872" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="8041e77c-78bf-4168-8c0e-0e3dc5d86b02" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Edge: KMD Logon - Log på" sap:VirtualizedContainerService.HintSize="682,3323" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="8041e77c-78bf-4168-8c0e-0e3dc5d86b02" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="648,3655" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="648,3106" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -203,23 +203,22 @@
                 <uix:TargetAnchorable BrowserURL="https://capwebwlbs-wm2q2012.kmd.dk/KMDNovaESDH/udvidet-soegning/nbc-aktiviteter" DesignTimeRectangle="8, 111, 0, 0" DesignTimeScaleFactor="1.100000023841858" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' name='__RequestVerificationToken' type='hidden' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' name='__RequestVerificationToken' type='hidden' class='' aaname='' /&gt;" Guid="d08afc0c-64f5-412d-ae7f-fc5c583c9dee" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAhSURBVBhXY4CB/0BgbW39H8qFCGRkZKAKJCYmogsk/gcA1IsYHPFUjcsAAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;html app='msedge.exe' title='KMD Nova ESDH' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
               </uix:NGetAttribute.Target>
             </uix:NGetAttribute>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;RequestVerification: &quot;+Out_RequestVerification]" />
             <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="586,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[JObject]" JsonString="[Cookies]" />
-            <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="586,1384" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[CType(JObject(&quot;cookies&quot;),JArray)]">
+            <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="586,1018" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[CType(JObject(&quot;cookies&quot;),JArray)]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="njl:JObject">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="njl:JObject" Name="currentItem" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,1198" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,832" sap2010:WorkflowViewState.IdRef="Sequence_15">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[currentItem(&quot;name&quot;).ToString = &quot;KMDLogonWebSessionHandler&quot;]" sap:VirtualizedContainerService.HintSize="510,535" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If Condition="[currentItem(&quot;name&quot;).ToString = &quot;KMDLogonWebSessionHandler&quot;]" sap:VirtualizedContainerService.HintSize="510,352" sap2010:WorkflowViewState.IdRef="If_3">
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="476,353" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_10">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -233,7 +232,6 @@
                               <InArgument x:TypeArguments="x:String">[currentItem("value").ToString]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;LogonWebSession: &quot;+Out_LogonWebSession]" />
                         </Sequence>
                       </If.Then>
                       <If.Else>
@@ -246,9 +244,9 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If Condition="[currentItem(&quot;domain&quot;).ToString = &quot;capwebwlbs-wm2q2012.kmd.dk&quot; and currentItem(&quot;name&quot;).ToString = &quot;__RequestVerificationToken_L0tNRE5vdmFFU0RI0&quot;]" sap:VirtualizedContainerService.HintSize="510,535" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If Condition="[currentItem(&quot;domain&quot;).ToString = &quot;capwebwlbs-wm2q2012.kmd.dk&quot; and currentItem(&quot;name&quot;).ToString = &quot;__RequestVerificationToken_L0tNRE5vdmFFU0RI0&quot;]" sap:VirtualizedContainerService.HintSize="510,352" sap2010:WorkflowViewState.IdRef="If_4">
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="476,353" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_13">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -262,7 +260,6 @@
                               <InArgument x:TypeArguments="x:String">[currentItem("value").ToString]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;VerificationToken: &quot;+Out_VerificationToken]" />
                         </Sequence>
                       </If.Then>
                       <If.Else>
