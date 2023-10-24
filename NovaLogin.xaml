@@ -1,0 +1,290 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="HTTP_Request" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Out_RequestVerification" Type="OutArgument(x:String)" />
+    <x:Property Name="Out_LogonWebSession" Type="OutArgument(x:String)" />
+    <x:Property Name="Out_VerificationToken" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1014,4048</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>HTTP_Request_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="HTTP_Request" sap:VirtualizedContainerService.HintSize="744,3983" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="Cookies" />
+      <Variable x:TypeArguments="njl:JObject" Name="JObject" />
+      <Variable x:TypeArguments="x:Boolean" Name="LogIn" />
+      <Variable x:TypeArguments="ss:SecureString" Name="NovaPassword" />
+      <Variable x:TypeArguments="x:String" Name="NovaUsername" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Edge: KMD Logon - Log på" sap:VirtualizedContainerService.HintSize="682,3872" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="8041e77c-78bf-4168-8c0e-0e3dc5d86b02" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="648,3655" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="586,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
+            <ui:UiElementExists DisplayName="Element Exists 'DIV'" Exists="[LogIn]" sap:VirtualizedContainerService.HintSize="586,107" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4bca162e-e9d7-45e8-9d8d-169dbc6b4196" InformativeScreenshot="aab876e4c8f43c2bbaeefe855c445aac" Selector="&lt;html app='msedge.exe' title='KMD Logon - Log på' /&gt;&lt;webctrl isleaf='1' tag='DIV' visibleinnertext='Log på' /&gt;" TimeoutMS="2000" WaitForReady="COMPLETE" />
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[LogIn]" sap:VirtualizedContainerService.HintSize="586,1162" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,980" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="KMDNovaLogin" CacheStrategy="None" DisplayName="Get Credential" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[NovaPassword]" Username="[NovaUsername]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'azmtm01'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="8041e77c-78bf-4168-8c0e-0e3dc5d86b02" Text="[NovaUsername]" Version="V1">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://capwsswlbs-wm1q2003.kmd.dk/KMD.YH.KMDLogonWEB.NET/AspSson.aspx?KmdLogon_sApplCallback=https://capwebwlbs-wm2q2012.kmd.dk/KMDNovaESDH&amp;KMDLogon_sProtocol=tcpip&amp;KMDLogon_sApplPrefix=--&amp;KMDLogon_sOrigin=ApplAsp&amp;ExtraData=true" DesignTimeRectangle="756, 326, 425, 37" ElementType="InputBox" FriendlyName="'azmtm01'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' id='inputUsername' name='UserInfo.Username' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' id='inputUsername' name='UserInfo.Username' class='otherOptionsTxt' aaname='' /&gt;" Guid="2a2b0a38-131c-49c0-9bfa-6ce53e00d7a6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAa0AAAApCAYAAACGAHZNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMRSURBVHhe7dnNbeJQGIbRKSFLCkhBbNjQAh2EUiZ1RJEoAkWpIqEAVugOn/9igz2akGswo3OkVxNsYs2KR5f8enx8TGZmZvewJlrz+TxtNpu03+8TANxa9Ci6FH3qRCsuHA6HtN1u03K5TLPZLD08PJiZmd1k0aHoUXQp+lSHq4hWlCxuiJWZmU1p0aXoU3SqiVYcwaJo8YbVapV2u111OAOA64sORY+iS9Gn6FQTrVCfsgQLgCmIHtWnrdCJVtyIAcBUtNskWgBMmmgBcDdEK7PFYlH9BEBuopWZaAGMR7QyEy2A8YhWZqIFMB7Ryky0AMYjWpmJFsB4RKvHx8u6iE+5dXr9rG6ceU/PJ/dFC2A8/0W0isg8vaaP6vVPlMF6Puao/3Xh8zWtB6ImWgDjEa2OODkt0vNb9bLwkV6fFmn9Uj+99bqIl2gBXEv2aHW/Wmt/2J/fa/a7PMe8/y5/Lv6t7pW/X4aiey10rxer4vX9Zx29PR+vnZyqjupnnREtgKvKHK3jSaX94V59jdY9uXw5PSHVgWneX0Sk71o3FH0nrUueNXRiG7ouWgDXlTlap06/Wmvpic/5iaY6FfVcaz9zMFrffJZoAUzbCNEq/y5Un2pi59Eq33N6fSg03ff9LFp/e5ZoAUxb1mgVH+7HD+2vrwP7QtEXlNKto1We/vxNC2CqskbrXwIzFIZw82j1RKh+z1eIW0QL4KqyRus0FPXJqxuFgQAcXRqtvhBe+qzi91oBHPxqMIgWwFVljdbxI7/z96z1y3srCmUg6nudVXG5OFrtZ1eBufxZ1e/W/7ehYAXRAriqzNFCtADGI1qZiRbAeEQrM9ECGI9oZSZaAOMRLQDuhmgBcDdEC4C7IVoA3A3RAuBuDEZrNpsVN3a7XfEaAG4pehRdij6FJlr7/T4tl8vi5mq1Ei4Abio6FD2KLkWfolNNtDabTdput81py8zMbAqLLkWfolNNtObzeTocDsWNKJp4mZnZLRcdih5Fl6JP0akmWnW4omRxBAOAW4seRZfqYHWiZWZmNu09pj9KWc7tr5YalwAAAABJRU5ErkJggg==" InformativeScreenshot="8ab2ebbb5e3af9cd6c4f9bc53b078308.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='KMD Logon - Log på' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'INPUT inputPassword'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="8041e77c-78bf-4168-8c0e-0e3dc5d86b02" SecureText="[NovaPassword]" Version="V1">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://capwsswlbs-wm1q2003.kmd.dk/KMD.YH.KMDLogonWEB.NET/AspSson.aspx?KmdLogon_sApplCallback=https://capwebwlbs-wm2q2012.kmd.dk/KMDNovaESDH&amp;KMDLogon_sProtocol=tcpip&amp;KMDLogon_sApplPrefix=--&amp;KMDLogon_sOrigin=ApplAsp&amp;ExtraData=true" DesignTimeRectangle="756, 378, 425, 37" ElementType="InputBoxPassword" FriendlyName="'INPUT inputPassword'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' id='inputPassword' name='UserInfo.Password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' id='inputPassword' name='UserInfo.Password' class='otherOptionsTxt' aaname='' /&gt;" Guid="2256b266-d6dd-46eb-bf02-c1b4b68c3def" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAa0AAAApCAYAAACGAHZNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEpSURBVHhe7dexSsNQGIbhXExuRDr0LgQnr6iLq3fg5O6avU7qWNChS1eP/IGKYLolkK88w7N8OQeyvZyu7/sGAAlEC4AYv9EahgEAVmkyWofjNwCsimgBEEO0AIghWgDEEC0AYogWADFEC4AYogVADNECIIZoARBDtACIIVoAxBAtAGKIFgAxRAuAGKIFQAzRAiDGbNF6en5pXde1m8227d8+x2338Dhut3f37eNwGvf6XludX/pebQBcj9miVaGoYJSKx9/QlIrMOSqlzr++fy16b+o/AcjlpQVAjNmiBQBLEy0AYogWADFEC4AYogVADNECIIZoARBDtACIIVoAxBAtAGKIFgAxRAuAGKIFQAzRAiCGaAEQ42K0AGCN/kULANZOtAAI0bcf/oGK/dTRtjsAAAAASUVORK5CYII=" InformativeScreenshot="84cc5e3dbc38860a398b1b4649926f29.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='KMD Logon - Log på' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log på'" sap:VirtualizedContainerService.HintSize="334,193" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8041e77c-78bf-4168-8c0e-0e3dc5d86b02" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable Accuracy="0.96" BrowserURL="https://capwsswlbs-wm1q2003.kmd.dk/KMD.YH.KMDLogonWEB.NET/AspSson.aspx?KmdLogon_sApplCallback=https://capwebwlbs-wm2q2012.kmd.dk/KMDNovaESDH&amp;KMDLogon_sProtocol=tcpip&amp;KMDLogon_sApplPrefix=--&amp;KMDLogon_sOrigin=ApplAsp&amp;ExtraData=true" DesignTimeRectangle="756, 525, 425, 40" ElementType="Button" FriendlyName="'Log på'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzyAccuracy="1" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='logonOtherBtn' aaname='Log på' check:innerText='Log på' /&gt;" Guid="915008df-6f96-4e1f-a102-22583454c8a3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAa0AAAAsCAYAAADWzef+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKlSURBVHhe7dy9itVAGIBhL+ZUXs+W3oOt92BtZSFWlmKjlRZrpYKC+MOKIsv6w15F5Fv4ZBwnJod14UzmKZ4iyUyS6rzMZNlru91uAoAeiBYA3fgdraOjIwA4SM1o3bp7HQAOimgB0A3RAqAbogVAN0QLgG6IFgDdEC0AuiFaAHRDtADohmgB0A3RAqAbogVAN0QLgG6IFsN59e7xdPb963T/yc3m9UMW735+fn7h6ct7zTGwZaLFcHqNVrzvh88vpjsPb0yPjm9Pb0+eN8fBlokWw9nCSuvHz28X4WqNgS0TLYbTc7RgdKLFcNZGK1c1aW5OrHhi5ZPjvpy+n958fLb4jLgWY+LbVP2sOC7HxpZg3LccE8dxvhwHWydaDGcpWhmIekx8T6q35SI4EZDyjyIyQGujdXr26Y9I5T3rc+Vxzo13ynMwAtFiOEvRikC0rmfMMhR5XMYkxZi10WqFZ+kdQ4yx2mI0osVwloIQEZlbwZRzc1uwXGW1xtXXUkarNT/Otf7YIt4rtwfXrOZga0SL4fwrKPVqqlbOnQtLPa6+lvaJVtwvIlW+15pnwNaIFsNZ+rFfu9K66mjl/LkVnWgxItFiOEs/9nPX61VYRifGt8YtBSXntwIZ5/J7VStaa58BWyNaDGcpWnNBiJDU5+JesW1XBiXPLQUlrsWYufl5LseVcVv7DNga0WI4+YNfq7f6IhLl9Vz5lPcK9f3iOKyN1vHrBxf3zvmtLcdcbe37DNga0YIrEEGZi1zKaNXfqoB5ogX/WW4vtr5VlUQL9idacAnxn9brrbzWt68W0YL9iRZcQmwD5nemtLQtmEQL9idaAHRDtADohmgB0A3RAqAbogVAN0QLgG6IFgDdEC0AujEbLQA4RH9FCwAOnWgB0Ind9AuHqTjB0O9E3wAAAABJRU5ErkJggg==" InformativeScreenshot="caa621aeb608627144df5d6166334418.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='KMD Logon - Log på' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="Label 'AZMTM01'" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Target>
+                          <uix:TargetAnchorable BrowserURL="https://capwebwlbs-wm2q2012.kmd.dk/KMDNovaESDH/forside" DesignTimeRectangle="1345, 114, 102, 18" ElementType="Text" FriendlyName="'AZMTM01'" FullSelectorArgument="&lt;webctrl aaname='AZMTM01' tag='SPAN' parentclass='btn-group informations-box-at-the-top' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='AZMTM01' tag='SPAN' parentclass='btn-group informations-box-at-the-top' type='' class='item hidden-xs ' check:text='AZMTM01' /&gt;" Guid="a01ed44b-4ebb-4f7a-a69e-5eaa49ba6c86" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGoAAAAWCAYAAAAowQktAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGpSURBVGhD7ZZtkoMgDIb3qp5Oz0HvYG/ADfidTcJnkBW37TqLhpl3LEyI8D6h+DVNE6j+vxTUIFJQg0hBDSIFNYgU1CBSUIPoPFDzCg4A3HMR48uTRrctxT0s9WCd85w8DmAf+DvkbjZrjueJY2U+t8JSxqP8mhu5/lCngaLNOWvBNTYuxMZZMEXfOZxbATYWx9AvYTCJ5rfecTiPwbfnvuFOgB373C4JaoEV3Vjn+GzFkKRJLDIeAVthPsY5GqtiY/wPoA7lqefz6SoKh0XrvCIo2mzYPJ+sqqq9CCJRytXLYoMNV3I00+cwHP87UP08/Lcm1tCCclFQtPlkaAGtjkGHqspFBYPTU5zObLCI3wHVy+PhlYV0G1DhpIhWbTJc3hvTSclYMgdBUmwyujGnB6qT574nqmGcrNoAUphTKBkc5uEp8Ka+CqqTp57PRXSDO4ruhM2dVJjBFbwxolBhsDTtdVD7eQhC7tdffTnmSqDYkNaGohnhNDVaglsaLPQGKKFGHl53aCKXX7dsO0X2QZ3yMaF6XwpqECmoQaSgBpGCGkQKaghN8A1E/el1eC6phQAAAABJRU5ErkJggg==" InformativeScreenshot="18b6b871044397856e401b40bce4c7fd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*KMD*' /&gt;" SearchSteps="Selector, Image" Visibility="Interactive" />
+                        </uix:VerifyExecutionOptions.Target>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="300,81" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <uix:NGetBrowserData DisplayName="Get Browser Data" sap:VirtualizedContainerService.HintSize="586,107" sap2010:WorkflowViewState.IdRef="NGetBrowserData_2" SessionData="[Cookies]" Version="V3" />
+            <uix:NGetAttribute Attribute="ncg-request-verification-token" DisplayName="Get Attribute 'INPUT'" sap:VirtualizedContainerService.HintSize="586,207" sap2010:WorkflowViewState.IdRef="NGetAttribute_2" ScopeIdentifier="8041e77c-78bf-4168-8c0e-0e3dc5d86b02" Version="V3">
+              <uix:NGetAttribute.Result>
+                <OutArgument x:TypeArguments="x:Object">[Out_RequestVerification]</OutArgument>
+              </uix:NGetAttribute.Result>
+              <uix:NGetAttribute.Target>
+                <uix:TargetAnchorable BrowserURL="https://capwebwlbs-wm2q2012.kmd.dk/KMDNovaESDH/udvidet-soegning/nbc-aktiviteter" DesignTimeRectangle="8, 111, 0, 0" DesignTimeScaleFactor="1.100000023841858" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' name='__RequestVerificationToken' type='hidden' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' name='__RequestVerificationToken' type='hidden' class='' aaname='' /&gt;" Guid="d08afc0c-64f5-412d-ae7f-fc5c583c9dee" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAhSURBVBhXY4CB/0BgbW39H8qFCGRkZKAKJCYmogsk/gcA1IsYHPFUjcsAAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;html app='msedge.exe' title='KMD Nova ESDH' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+              </uix:NGetAttribute.Target>
+            </uix:NGetAttribute>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;RequestVerification: &quot;+Out_RequestVerification]" />
+            <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="586,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[JObject]" JsonString="[Cookies]" />
+            <ui:ForEach x:TypeArguments="njl:JObject" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="586,1384" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[CType(JObject(&quot;cookies&quot;),JArray)]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="njl:JObject">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="njl:JObject" Name="currentItem" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,1198" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[currentItem(&quot;name&quot;).ToString = &quot;KMDLogonWebSessionHandler&quot;]" sap:VirtualizedContainerService.HintSize="510,535" sap2010:WorkflowViewState.IdRef="If_3">
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="476,353" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[Out_LogonWebSession]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[currentItem("value").ToString]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;LogonWebSession: &quot;+Out_LogonWebSession]" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="300,81" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <If Condition="[currentItem(&quot;domain&quot;).ToString = &quot;capwebwlbs-wm2q2012.kmd.dk&quot; and currentItem(&quot;name&quot;).ToString = &quot;__RequestVerificationToken_L0tNRE5vdmFFU0RI0&quot;]" sap:VirtualizedContainerService.HintSize="510,535" sap2010:WorkflowViewState.IdRef="If_4">
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="476,353" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[Out_VerificationToken]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[currentItem("value").ToString]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;VerificationToken: &quot;+Out_VerificationToken]" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="300,81" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, -8, 1936, 1176" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEVSURBVDhPY/j3799/SjBtDHj//dX/hK1G/+sPR/6vORj6v3SfD4YaGMZpAEzTxx9vSTdg8ZUOsAt6T+X87zyeBmYffbIFQx0IYzUA5PSIjeooeOX1CRjqQBivAeEb1OA0WQYgY5IMWHi57X/rsUQUfPDROgx1IIzVAFIw3IC7d+/+//jxI5h+/fr1/ydPnoBpEAaJgfjnzp0D87EaUF1T/X/K1Cn/09LTwIpKy0r/d3V1gcXyC/L/7923F8yPi4sDG4jVAP8Af7BCEB+kEIRBBoZHhMM1gAxcsnQJnI/hApCmq1evgjXOnDkTjEFiIDkQGyQOkscwACQIcjqIBvkV5l8QBrEPHToExqCwgOlBMYA8/O8/AKWTj75ezvVoAAAAAElFTkSuQmCC" InformativeScreenshot="cbf356e4a153688fdf37269ef225bca3.jpg" Selector="&lt;html app='msedge.exe' title='KMD Logon - Log på' /&gt;" Title="*KMD*" Url="https://capwsswlbs-wm1q2003.kmd.dk/KMD.YH.KMDLogonWEB.NET/AspSson.aspx?KmdLogon_sApplCallback=https://capwebwlbs-wm2q2012.kmd.dk/KMDNovaESDH&amp;KMDLogon_sProtocol=tcpip&amp;KMDLogon_sApplPrefix=--&amp;KMDLogon_sOrigin=ApplAsp&amp;ExtraData=true" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
