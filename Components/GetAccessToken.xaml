@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1012,3355</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1009,3225</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetAccessToken_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -88,7 +88,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetAccessToken" sap:VirtualizedContainerService.HintSize="572,3290" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetAccessToken" sap:VirtualizedContainerService.HintSize="572,3160" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="OldTimestamp" />
       <Variable x:TypeArguments="x:String" Name="OldToken" />
@@ -154,7 +154,7 @@
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Differencen er : &quot; + Difference]" />
-    <If sap2010:Annotation.AnnotationText="if-statement, som tjekker om tids differencen er under 1.5. Hvis den er over, henter den en ny access token til videre brug" Condition="[Int_Difference &lt;1]" DisplayName="If int_difference below 1.5" sap:VirtualizedContainerService.HintSize="510,1638" sap2010:WorkflowViewState.IdRef="If_1">
+    <If sap2010:Annotation.AnnotationText="if-statement, som tjekker om tids differencen er under 1 Hvis den er over, henter den en ny access token til videre brug" Condition="[Int_Difference &lt;1]" DisplayName="If int_difference below 1.5" sap:VirtualizedContainerService.HintSize="510,1508" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -181,12 +181,13 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="476,1063" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap:VirtualizedContainerService.HintSize="476,933" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="Respons" />
             <Variable x:TypeArguments="x:String" Default="lottNjMyx07BBfEzkVx5P2HwPWpvz2sG" Name="ClientSecret" />
             <Variable x:TypeArguments="x:String" Default="aarhus_kommune" Name="ClientID" />
             <Variable x:TypeArguments="x:String" Default="client" Name="Scope" />
+            <Variable x:TypeArguments="x:Int32" Name="Status" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -194,7 +195,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Token er udløbet, der hentes en ny&quot;]" />
-          <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/x-www-form-unlencoded" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="https://novaauth.kmd.dk/realms/NovaIntegration/protocol/openid-connect/token" sap:VirtualizedContainerService.HintSize="434,70" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[Respons]" TimeoutMS="20000">
+          <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/x-www-form-unlencoded" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="https://novaauth.kmd.dk/realms/NovaIntegration/protocol/openid-connect/token" sap:VirtualizedContainerService.HintSize="434,70" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="POST" Result="[Respons]" StatusCode="[Status]" TimeoutMS="30000">
             <ui:HttpClient.Attachments>
               <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
             </ui:HttpClient.Attachments>
@@ -220,7 +221,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:HttpClient>
-          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[Respons]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[Status.ToString]" />
           <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[out_Token]</OutArgument>
@@ -229,7 +230,6 @@
               <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(Respons, """access_token"":""([^""]*)""").Groups(1).Value]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[out_Token]" />
           <ui:SetAsset TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Da der hentes en ny token, sættes denne ind i orchestrator&#xA;" AssetName="KMDAPIToken" DisplayName="Set Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="434,251" sap2010:WorkflowViewState.IdRef="SetAsset_2" Value="[out_Token]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">

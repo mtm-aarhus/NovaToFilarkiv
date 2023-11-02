@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>582,1498</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1009,1498</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>RegisterTransferInNova_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -158,7 +158,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[json]" BodyFormat="application/Json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="https://novaapi.kmd.dk/api/Document/Update?api-version=1.0-Case" sap:VirtualizedContainerService.HintSize="434,70" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="PATCH" Result="[Respons]" StatusCode="[Status]" TimeoutMS="6000">
+            <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[json]" BodyFormat="application/Json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="https://novaapi.kmd.dk/api/Document/Update?api-version=1.0-Case" sap:VirtualizedContainerService.HintSize="434,70" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="PATCH" Result="[Respons]" StatusCode="[Status]" TimeoutMS="30000">
               <ui:HttpClient.Attachments>
                 <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
               </ui:HttpClient.Attachments>
@@ -166,9 +166,7 @@
                 <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
               </ui:HttpClient.Cookies>
               <ui:HttpClient.Headers>
-                <InArgument x:TypeArguments="x:String" x:Key="Authorization">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Bearer &quot; +in_KMDAPIToken" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Authorization">["Bearer " +in_KMDAPIToken]</InArgument>
               </ui:HttpClient.Headers>
               <ui:HttpClient.Parameters>
                 <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />

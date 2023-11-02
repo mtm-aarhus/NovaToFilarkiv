@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Activity mc:Ignorable="sap sap2010" x:Class="SendDocumentsToFilarkiv" this:SendDocumentsToFilarkiv.in_CaseId="9c60ce1c-5f57-44ab-b805-44800017000c" this:SendDocumentsToFilarkiv.in_CaseNumber="S2021-456011" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_CaseId" Type="InArgument(x:String)" />
@@ -8,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1012,2310</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1009,2471</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendDocumentsToFilarkiv_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -107,7 +106,7 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SendDocumentsToFilarkiv" sap:VirtualizedContainerService.HintSize="668,2245" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SendDocumentsToFilarkiv" sap:VirtualizedContainerService.HintSize="668,2406" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="RequestVerification" />
       <Variable x:TypeArguments="x:String" Name="LogonWebSession" />
@@ -150,14 +149,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <If sap2010:Annotation.AnnotationText="If-statement, som tjekker om der er nogen sager at overfører til FilArkiv. Hvis der ikke er dette, går robotten videre til næste sag. " Condition="[in_dt_CaseAndDocumentInfo.RowCount &gt;0]" sap:VirtualizedContainerService.HintSize="606,2042" sap2010:WorkflowViewState.IdRef="If_2">
+    <If sap2010:Annotation.AnnotationText="If-statement, som tjekker om der er nogen sager at overfører til FilArkiv. Hvis der ikke er dette, går robotten videre til næste sag. " Condition="[in_dt_CaseAndDocumentInfo.RowCount &gt;0]" sap:VirtualizedContainerService.HintSize="606,2203" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="572,1818" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence sap:VirtualizedContainerService.HintSize="572,1979" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -171,7 +170,7 @@
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,141" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Overfører antal rækker: &quot; + in_dt_CaseAndDocumentInfo.RowCount.ToString]" />
-          <Assign sap:VirtualizedContainerService.HintSize="530,82" sap2010:WorkflowViewState.IdRef="Assign_9">
+          <Assign sap2010:Annotation.AnnotationText="Assigner en tom string til senere brug" sap:VirtualizedContainerService.HintSize="530,113" sap2010:WorkflowViewState.IdRef="Assign_9">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[finalString]</OutArgument>
             </Assign.To>
@@ -180,8 +179,13 @@
                 <Literal x:TypeArguments="x:String" Value="" />
               </InArgument>
             </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </Assign>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[index]" DataTable="[in_dt_CaseAndDocumentInfo]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="530,674" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+          <ui:ForEachRow ColumnNames="{x:Null}" sap2010:Annotation.AnnotationText="For each row/ hver dokument, assignes documentID og DocumentNumber, og sættes ind i &quot;formattedRow&quot;. Tilsidst sættes den ind i Finalstring" CurrentIndex="[index]" DataTable="[in_dt_CaseAndDocumentInfo]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="530,716" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
@@ -228,14 +232,24 @@
                 </Sequence>
               </ActivityAction>
             </ui:ForEachRow.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </ui:ForEachRow>
-          <Assign sap:VirtualizedContainerService.HintSize="530,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+          <Assign sap2010:Annotation.AnnotationText="Fjerner det sidste komma i FinalString" sap:VirtualizedContainerService.HintSize="530,113" sap2010:WorkflowViewState.IdRef="Assign_8">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[FinalString]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:String">[finalString.Substring(0, finalString.LastIndexOf(","))]</InArgument>
             </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </Assign>
           <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="530,52" sap2010:WorkflowViewState.IdRef="CommentOut_9">
             <ui:CommentOut.Body>
@@ -255,7 +269,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:CommentOut>
-          <ui:InvokeCode ContinueOnError="{x:Null}" Code="var client = new RestClient(&quot;https://capwebwlbs-wm2q2012.kmd.dk/KMDNovaESDH/api/ServiceRelayer/kmdnova/v1/publicarchive/submission&quot;);&#xA;client.Timeout = -1;&#xA;var request = new RestRequest(Method.POST);&#xA;request.AddHeader(&quot;Accept&quot;, &quot;application/json, text/plain, */*&quot;);&#xA;request.AddHeader(&quot;Accept-Language&quot;, &quot;en-US,en;q=0.9&quot;);&#xA;request.AddHeader(&quot;Connection&quot;, &quot;keep-alive&quot;);&#xA;request.AddHeader(&quot;Content-Type&quot;, &quot;application/json;charset=UTF-8&quot;);&#xA;request.AddHeader(&quot;Origin&quot;, &quot;https://capwebwlbs-wm2q2012.kmd.dk&quot;);&#xA;request.AddHeader(&quot;RequestVerificationToken&quot;, RequestVerification);&#xA;request.AddHeader(&quot;Sec-Fetch-Dest&quot;, &quot;empty&quot;);&#xA;request.AddHeader(&quot;Sec-Fetch-Mode&quot;, &quot;cors&quot;);&#xA;request.AddHeader(&quot;Sec-Fetch-Site&quot;, &quot;same-origin&quot;);&#xA;client.UserAgent = &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36 Edg/117.0.2045.60&quot;;&#xA;request.AddHeader(&quot;X-Requested-With&quot;, &quot;XMLHttpRequest&quot;);&#xA;request.AddHeader(&quot;sec-ch-ua&quot;, &quot;\&quot;Microsoft Edge\&quot;;v=\&quot;117\&quot;, \&quot;Not;A=Brand\&quot;;v=\&quot;8\&quot;, \&quot;Chromium\&quot;;v=\&quot;117\&quot;&quot;);&#xA;request.AddHeader(&quot;sec-ch-ua-mobile&quot;, &quot;?0&quot;);&#xA;request.AddHeader(&quot;sec-ch-ua-platform&quot;, &quot;\&quot;Windows\&quot;&quot;);&#xA;request.AddCookie(&quot;kmdNovaIndstillingerCurrent&quot;, &quot;MTM-Byggeri&quot;);&#xA;request.AddCookie(&quot;__RequestVerificationToken_L0tNRE5vdmFFU0RI0&quot;, VerificationToken);&#xA;request.AddCookie(&quot;KMDLogonWebSessionHandler&quot;, LogonWebSession);&#xA;//var body = &quot;{\&quot;CaseId\&quot;:\&quot;&quot;+CaseId+&quot;\&quot;,\&quot;CaseNumber\&quot;:\&quot;&quot;+CaseNumber+&quot;\&quot;,\&quot;Provider\&quot;:\&quot;FilArkiv\&quot;,\&quot;Documents\&quot;:[{\&quot;DocumentId\&quot;:\&quot;&quot;+DocumentId+&quot;\&quot;,\&quot;DocumentNumber\&quot;:\&quot;&quot;+DocumentNumber+&quot;\&quot;}]}&quot;;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;var body = &quot;{\&quot;CaseId\&quot;:\&quot;&quot;+CaseId+&quot;\&quot;,\&quot;CaseNumber\&quot;:\&quot;&quot;+CaseNumber+&quot;\&quot;,\&quot;Provider\&quot;:\&quot;FilArkiv\&quot;,\&quot;Documents\&quot;:[&quot;+FinalString+&quot;]}&quot;;&#xA;request.AddParameter(&quot;application/json;charset=UTF-8&quot;, body,  ParameterType.RequestBody);&#xA;IRestResponse response = client.Execute(request);&#xA;ResponseOut = response.Content;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="530,165" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+          <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Kode som sender dokumenterne som mangler at blive overført  til FilArkiv. Hvis der findes flere dokumenter, sendes disse som et &quot;batch&quot;" Code="var client = new RestClient(&quot;https://capwebwlbs-wm2q2012.kmd.dk/KMDNovaESDH/api/ServiceRelayer/kmdnova/v1/publicarchive/submission&quot;);&#xA;client.Timeout = -1;&#xA;var request = new RestRequest(Method.POST);&#xA;request.AddHeader(&quot;Accept&quot;, &quot;application/json, text/plain, */*&quot;);&#xA;request.AddHeader(&quot;Accept-Language&quot;, &quot;en-US,en;q=0.9&quot;);&#xA;request.AddHeader(&quot;Connection&quot;, &quot;keep-alive&quot;);&#xA;request.AddHeader(&quot;Content-Type&quot;, &quot;application/json;charset=UTF-8&quot;);&#xA;request.AddHeader(&quot;Origin&quot;, &quot;https://capwebwlbs-wm2q2012.kmd.dk&quot;);&#xA;request.AddHeader(&quot;RequestVerificationToken&quot;, RequestVerification);&#xA;request.AddHeader(&quot;Sec-Fetch-Dest&quot;, &quot;empty&quot;);&#xA;request.AddHeader(&quot;Sec-Fetch-Mode&quot;, &quot;cors&quot;);&#xA;request.AddHeader(&quot;Sec-Fetch-Site&quot;, &quot;same-origin&quot;);&#xA;client.UserAgent = &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36 Edg/117.0.2045.60&quot;;&#xA;request.AddHeader(&quot;X-Requested-With&quot;, &quot;XMLHttpRequest&quot;);&#xA;request.AddHeader(&quot;sec-ch-ua&quot;, &quot;\&quot;Microsoft Edge\&quot;;v=\&quot;117\&quot;, \&quot;Not;A=Brand\&quot;;v=\&quot;8\&quot;, \&quot;Chromium\&quot;;v=\&quot;117\&quot;&quot;);&#xA;request.AddHeader(&quot;sec-ch-ua-mobile&quot;, &quot;?0&quot;);&#xA;request.AddHeader(&quot;sec-ch-ua-platform&quot;, &quot;\&quot;Windows\&quot;&quot;);&#xA;request.AddCookie(&quot;kmdNovaIndstillingerCurrent&quot;, &quot;MTM-Byggeri&quot;);&#xA;request.AddCookie(&quot;__RequestVerificationToken_L0tNRE5vdmFFU0RI0&quot;, VerificationToken);&#xA;request.AddCookie(&quot;KMDLogonWebSessionHandler&quot;, LogonWebSession);&#xA;//var body = &quot;{\&quot;CaseId\&quot;:\&quot;&quot;+CaseId+&quot;\&quot;,\&quot;CaseNumber\&quot;:\&quot;&quot;+CaseNumber+&quot;\&quot;,\&quot;Provider\&quot;:\&quot;FilArkiv\&quot;,\&quot;Documents\&quot;:[{\&quot;DocumentId\&quot;:\&quot;&quot;+DocumentId+&quot;\&quot;,\&quot;DocumentNumber\&quot;:\&quot;&quot;+DocumentNumber+&quot;\&quot;}]}&quot;;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;var body = &quot;{\&quot;CaseId\&quot;:\&quot;&quot;+CaseId+&quot;\&quot;,\&quot;CaseNumber\&quot;:\&quot;&quot;+CaseNumber+&quot;\&quot;,\&quot;Provider\&quot;:\&quot;FilArkiv\&quot;,\&quot;Documents\&quot;:[&quot;+FinalString+&quot;]}&quot;;&#xA;request.AddParameter(&quot;application/json;charset=UTF-8&quot;, body,  ParameterType.RequestBody);&#xA;IRestResponse response = client.Execute(request);&#xA;ResponseOut = response.Content;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="530,222" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
             <ui:InvokeCode.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="VerificationToken">[VerificationToken]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="LogonWebSession">[LogonWebSession]</InArgument>
@@ -267,12 +281,23 @@
               <InArgument x:TypeArguments="x:String" x:Key="DocumentId">[DocumentID]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="DocumentNumber">[DocumentNumber]</InArgument>
             </ui:InvokeCode.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </ui:InvokeCode>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[Response]" />
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_14" />
+        <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
       </If.Else>
     </If>
   </Sequence>

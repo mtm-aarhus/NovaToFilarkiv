@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1009,19104</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1009,19485</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetDocumentInfo_Test_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -103,7 +103,7 @@
       <AssemblyReference>System.Collections</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetDocumentInfo_Test" sap:VirtualizedContainerService.HintSize="1014,19039" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetDocumentInfo_Test" sap:VirtualizedContainerService.HintSize="1014,19420" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str1" />
       <Variable x:TypeArguments="x:String" Name="str2" />
@@ -136,7 +136,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="GetDocumentInfo" sap:VirtualizedContainerService.HintSize="952,18928" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="GetDocumentInfo" sap:VirtualizedContainerService.HintSize="952,19309" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="json" />
         <Variable x:TypeArguments="x:String" Name="Respons" />
@@ -178,7 +178,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[json]" BodyFormat="application/Json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="https://novaapi.kmd.dk/api/Document/GetList?api-version=1.0-Case" sap:VirtualizedContainerService.HintSize="890,70" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="PUT" Result="[Respons]" StatusCode="[Status]" TimeoutMS="6000">
+      <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[json]" BodyFormat="application/Json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="https://novaapi.kmd.dk/api/Document/GetList?api-version=1.0-Case" sap:VirtualizedContainerService.HintSize="890,70" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="PUT" Result="[Respons]" StatusCode="[Status]" TimeoutMS="30000">
         <ui:HttpClient.Attachments>
           <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
         </ui:HttpClient.Attachments>
@@ -315,13 +315,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:MultipleAssign>
-      <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each document" sap:VirtualizedContainerService.HintSize="890,16642" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[jobjec.SelectToken(&quot;documents&quot;).ToArray]">
+      <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each document" sap:VirtualizedContainerService.HintSize="890,17026" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[jobjec.SelectToken(&quot;documents&quot;).ToArray]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="njl:JToken">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="njl:JToken" Name="currentJToken" />
             </ActivityAction.Argument>
-            <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Body" sap:VirtualizedContainerService.HintSize="856,16627" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Body" sap:VirtualizedContainerService.HintSize="856,16840" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -478,7 +478,13 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_60" />
+                          <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
                         </If.Else>
                       </If>
                       <If sap2010:Annotation.AnnotationText="Tjekker om currentItem's streng længde er tilsvarende det blacklistede ord. Hvis true, sættes det på listen til senere brug" Condition="[Math.Abs(currentItem.Length - str1Length) &lt;= 1]" sap:VirtualizedContainerService.HintSize="510,453" sap2010:WorkflowViewState.IdRef="If_14">
@@ -792,7 +798,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEach>
-              <If sap2010:Annotation.AnnotationText="If-statement, som tjekker om der er nogen &quot;blacklistede ord&quot;. Hvis der ikke er, forsætter den til at tjekke de næste kriterier. Hvis der er, skal hvert word array tjekkes igennem" Condition="[WordsArrayStr1.Count = 0 And WordsArrayStr2.Count = 0 And WordsArrayStr3.Count = 0]" sap:VirtualizedContainerService.HintSize="814,4125" sap2010:WorkflowViewState.IdRef="If_15">
+              <If sap2010:Annotation.AnnotationText="If-statement, som tjekker om der er nogen &quot;blacklistede ord&quot;. Hvis der ikke er, forsætter den til at tjekke de næste kriterier. Hvis der er, skal hvert word array tjekkes igennem" Condition="[WordsArrayStr1.Count = 0 And WordsArrayStr2.Count = 0 And WordsArrayStr3.Count = 0]" sap:VirtualizedContainerService.HintSize="814,4254" sap2010:WorkflowViewState.IdRef="If_15">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -835,31 +841,41 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="604,3761" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                  <Sequence sap:VirtualizedContainerService.HintSize="604,3890" sap2010:WorkflowViewState.IdRef="Sequence_32">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each, som tjekker listen med ord igennem, og kører levenstein algoritmen for hvert ord" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="562,1081" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[WordsArrayStr1]">
+                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="For each, som tjekker listen med ord igennem, og kører levenstein algoritmen for hvert ord" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="562,1126" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[WordsArrayStr1]">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="x:String">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:String" Name="item" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,853" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,898" sap2010:WorkflowViewState.IdRef="Sequence_37">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="https://github.com/cristinegulescu/startUiPathFromSalesforce/blob/master/Leven.txt" Code=" Dim n As Integer = str1.Length&#xA;        Dim m As Integer = strControl.Length&#xA;        Dim d(n + 1, m + 1) As Integer&#xA;&#x9;&#x9;decision =False&#xA;&#xA;        If n = 0 Then&#xA;            nr= m&#xA;&#x9;&#x9;Else If m = 0 Then&#xA;            nr= n&#xA;        Else &#xA;        Dim i As Integer&#xA;        Dim j As Integer&#xA;&#xA;        For i = 0 To n&#xA;            d(i, 0) = i&#xA;        Next&#xA;&#xA;        For j = 0 To m&#xA;            d(0, j) = j&#xA;        Next&#xA;&#xA;        For i = 1 To n&#xA;            For j = 1 To m&#xA;&#xA;                Dim cost As Integer&#xA;                If strControl(j - 1) = str1(i - 1) Then&#xA;                    cost = 0&#xA;                Else&#xA;                    cost = 1&#xA;                End If&#xA;&#xA;                d(i, j) = Math.Min(Math.Min(d(i - 1, j) + 1, d(i, j - 1) + 1),&#xA;                                   d(i - 1, j - 1) + cost)&#xA;            Next&#xA;        Next&#xA;nr = d(n, m)&#xA;End If&#xA;If (Math.Truncate((nr * 100) / str1.Length) &lt;= (100-percent)) &#xA;&#x9;decision = True&#xA;End If" DisplayName="Invoke Code Levenstrin algorithm" sap:VirtualizedContainerService.HintSize="410,207" sap2010:WorkflowViewState.IdRef="InvokeCode_7">
+                            <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="https://github.com/cristinegulescu/startUiPathFromSalesforce/blob/master/Leven.txt&#xD;&#xA;&#xD;&#xA;Procenten sættes til 80, således der er plads til 2 karakterfejl " Code=" Dim n As Integer = str1.Length&#xA;        Dim m As Integer = strControl.Length&#xA;        Dim d(n + 1, m + 1) As Integer&#xA;&#x9;&#x9;decision =False&#xA;&#xA;        If n = 0 Then&#xA;            nr= m&#xA;&#x9;&#x9;Else If m = 0 Then&#xA;            nr= n&#xA;        Else &#xA;        Dim i As Integer&#xA;        Dim j As Integer&#xA;&#xA;        For i = 0 To n&#xA;            d(i, 0) = i&#xA;        Next&#xA;&#xA;        For j = 0 To m&#xA;            d(0, j) = j&#xA;        Next&#xA;&#xA;        For i = 1 To n&#xA;            For j = 1 To m&#xA;&#xA;                Dim cost As Integer&#xA;                If strControl(j - 1) = str1(i - 1) Then&#xA;                    cost = 0&#xA;                Else&#xA;                    cost = 1&#xA;                End If&#xA;&#xA;                d(i, j) = Math.Min(Math.Min(d(i - 1, j) + 1, d(i, j - 1) + 1),&#xA;                                   d(i - 1, j - 1) + cost)&#xA;            Next&#xA;        Next&#xA;nr = d(n, m)&#xA;End If&#xA;If (Math.Truncate((nr * 100) / str1.Length) &lt;= (100-percent)) &#xA;&#x9;decision = True&#xA;End If" DisplayName="Invoke Code Levenstrin algorithm" sap:VirtualizedContainerService.HintSize="410,252" sap2010:WorkflowViewState.IdRef="InvokeCode_7">
                               <ui:InvokeCode.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="str1">[str1]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="strControl">[item.ToString.ToLower]</InArgument>
-                                <OutArgument x:TypeArguments="x:Int32" x:Key="nr">[result1]</OutArgument>
-                                <OutArgument x:TypeArguments="x:Boolean" x:Key="decision">[ResultBol1]</OutArgument>
-                                <InArgument x:TypeArguments="x:Int32" x:Key="percent">90</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="str1">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str1" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="strControl">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="item.ToString.ToLower" />
+                                </InArgument>
+                                <OutArgument x:TypeArguments="x:Int32" x:Key="nr">
+                                  <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="result1" />
+                                </OutArgument>
+                                <OutArgument x:TypeArguments="x:Boolean" x:Key="decision">
+                                  <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="ResultBol1" />
+                                </OutArgument>
+                                <InArgument x:TypeArguments="x:Int32" x:Key="percent">
+                                  <Literal x:TypeArguments="x:Int32" Value="80" />
+                                </InArgument>
                               </ui:InvokeCode.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -899,39 +915,54 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEach>
-                    <If sap2010:Annotation.AnnotationText="Hvis der ikke findes noget på første &quot;blacklistede ord, skal samme process køres på næste ord" Condition="[ResultBol1 = False]" sap:VirtualizedContainerService.HintSize="562,1256" sap2010:WorkflowViewState.IdRef="If_21">
+                    <If sap2010:Annotation.AnnotationText="Hvis der ikke findes noget på første &quot;blacklistede ord, skal samme process køres på næste ord" Condition="[ResultBol1 = False]" sap:VirtualizedContainerService.HintSize="562,1298" sap2010:WorkflowViewState.IdRef="If_21">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="528,1043" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                        <Sequence sap:VirtualizedContainerService.HintSize="528,1085" sap2010:WorkflowViewState.IdRef="Sequence_45">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="486,955" sap2010:WorkflowViewState.IdRef="ForEach`1_7" Values="[WordsArrayStr2]">
+                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="486,997" sap2010:WorkflowViewState.IdRef="ForEach`1_7" Values="[WordsArrayStr2]">
                             <ui:ForEach.Body>
                               <ActivityAction x:TypeArguments="x:String">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="x:String" Name="thing" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,769" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,811" sap2010:WorkflowViewState.IdRef="Sequence_51">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeCode ContinueOnError="{x:Null}" Code=" Dim n As Integer = str2.Length&#xA;        Dim m As Integer = strControl.Length&#xA;        Dim d(n + 1, m + 1) As Integer&#xA;&#x9;&#x9;decision =False&#xA;&#xA;        If n = 0 Then&#xA;            nr= m&#xA;&#x9;&#x9;Else If m = 0 Then&#xA;            nr= n&#xA;        Else &#xA;        Dim i As Integer&#xA;        Dim j As Integer&#xA;&#xA;        For i = 0 To n&#xA;            d(i, 0) = i&#xA;        Next&#xA;&#xA;        For j = 0 To m&#xA;            d(0, j) = j&#xA;        Next&#xA;&#xA;        For i = 1 To n&#xA;            For j = 1 To m&#xA;&#xA;                Dim cost As Integer&#xA;                If strControl(j - 1) = str2(i - 1) Then&#xA;                    cost = 0&#xA;                Else&#xA;                    cost = 1&#xA;                End If&#xA;&#xA;                d(i, j) = Math.Min(Math.Min(d(i - 1, j) + 1, d(i, j - 1) + 1),&#xA;                                   d(i - 1, j - 1) + cost)&#xA;            Next&#xA;        Next&#xA;nr = d(n, m)&#xA;End If&#xA;If (Math.Truncate((nr * 100) / str2.Length) &lt;= (100-percent)) &#xA;&#x9;decision = True&#xA;End If" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="410,165" sap2010:WorkflowViewState.IdRef="InvokeCode_9">
+                                  <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Procenten sættes til 80, således der er plads til 2 karakterfejl " Code=" Dim n As Integer = str2.Length&#xA;        Dim m As Integer = strControl.Length&#xA;        Dim d(n + 1, m + 1) As Integer&#xA;&#x9;&#x9;decision =False&#xA;&#xA;        If n = 0 Then&#xA;            nr= m&#xA;&#x9;&#x9;Else If m = 0 Then&#xA;            nr= n&#xA;        Else &#xA;        Dim i As Integer&#xA;        Dim j As Integer&#xA;&#xA;        For i = 0 To n&#xA;            d(i, 0) = i&#xA;        Next&#xA;&#xA;        For j = 0 To m&#xA;            d(0, j) = j&#xA;        Next&#xA;&#xA;        For i = 1 To n&#xA;            For j = 1 To m&#xA;&#xA;                Dim cost As Integer&#xA;                If strControl(j - 1) = str2(i - 1) Then&#xA;                    cost = 0&#xA;                Else&#xA;                    cost = 1&#xA;                End If&#xA;&#xA;                d(i, j) = Math.Min(Math.Min(d(i - 1, j) + 1, d(i, j - 1) + 1),&#xA;                                   d(i - 1, j - 1) + cost)&#xA;            Next&#xA;        Next&#xA;nr = d(n, m)&#xA;End If&#xA;If (Math.Truncate((nr * 100) / str2.Length) &lt;= (100-percent)) &#xA;&#x9;decision = True&#xA;End If" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="410,207" sap2010:WorkflowViewState.IdRef="InvokeCode_9">
                                     <ui:InvokeCode.Arguments>
-                                      <InArgument x:TypeArguments="x:String" x:Key="str2">[str2]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="strControl">[thing.ToString.ToLower]</InArgument>
-                                      <OutArgument x:TypeArguments="x:Int32" x:Key="nr">[result2]</OutArgument>
-                                      <OutArgument x:TypeArguments="x:Boolean" x:Key="decision">[ResultBol2]</OutArgument>
-                                      <InArgument x:TypeArguments="x:Int32" x:Key="percent">90</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="str2">
+                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str2" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="strControl">
+                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="thing.ToString.ToLower" />
+                                      </InArgument>
+                                      <OutArgument x:TypeArguments="x:Int32" x:Key="nr">
+                                        <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="result2" />
+                                      </OutArgument>
+                                      <OutArgument x:TypeArguments="x:Boolean" x:Key="decision">
+                                        <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="ResultBol2" />
+                                      </OutArgument>
+                                      <InArgument x:TypeArguments="x:Int32" x:Key="percent">
+                                        <Literal x:TypeArguments="x:Int32" Value="80" />
+                                      </InArgument>
                                     </ui:InvokeCode.Arguments>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
                                   </ui:InvokeCode>
                                   <If Condition="[ResultBol2 = true]" sap:VirtualizedContainerService.HintSize="410,476" sap2010:WorkflowViewState.IdRef="If_23">
                                     <If.Then>
@@ -965,39 +996,54 @@
                         <Sequence sap2010:WorkflowViewState.IdRef="Sequence_46" />
                       </If.Else>
                     </If>
-                    <If sap2010:Annotation.AnnotationText="Igen. hvis der ikke findes et blacklistet ord i forehående loop, skal det sidste ord tjekkes igennem " Condition="[ResultBol2 = False]" sap:VirtualizedContainerService.HintSize="562,1256" sap2010:WorkflowViewState.IdRef="If_22">
+                    <If sap2010:Annotation.AnnotationText="Igen. hvis der ikke findes et blacklistet ord i forehående loop, skal det sidste ord tjekkes igennem " Condition="[ResultBol2 = False]" sap:VirtualizedContainerService.HintSize="562,1298" sap2010:WorkflowViewState.IdRef="If_22">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="528,1043" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                        <Sequence sap:VirtualizedContainerService.HintSize="528,1085" sap2010:WorkflowViewState.IdRef="Sequence_47">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="486,955" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[WordsArrayStr3]">
+                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="486,997" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[WordsArrayStr3]">
                             <ui:ForEach.Body>
                               <ActivityAction x:TypeArguments="x:String">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,769" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,811" sap2010:WorkflowViewState.IdRef="Sequence_25">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeCode ContinueOnError="{x:Null}" Code=" Dim n As Integer = str3.Length&#xA;        Dim m As Integer = strControl.Length&#xA;        Dim d(n + 1, m + 1) As Integer&#xA;&#x9;&#x9;decision =False&#xA;&#xA;        If n = 0 Then&#xA;            nr= m&#xA;&#x9;&#x9;Else If m = 0 Then&#xA;            nr= n&#xA;        Else &#xA;        Dim i As Integer&#xA;        Dim j As Integer&#xA;&#xA;        For i = 0 To n&#xA;            d(i, 0) = i&#xA;        Next&#xA;&#xA;        For j = 0 To m&#xA;            d(0, j) = j&#xA;        Next&#xA;&#xA;        For i = 1 To n&#xA;            For j = 1 To m&#xA;&#xA;                Dim cost As Integer&#xA;                If strControl(j - 1) = str3(i - 1) Then&#xA;                    cost = 0&#xA;                Else&#xA;                    cost = 1&#xA;                End If&#xA;&#xA;                d(i, j) = Math.Min(Math.Min(d(i - 1, j) + 1, d(i, j - 1) + 1),&#xA;                                   d(i - 1, j - 1) + cost)&#xA;            Next&#xA;        Next&#xA;nr = d(n, m)&#xA;End If&#xA;If (Math.Truncate((nr * 100) / str3.Length) &lt;= (100-percent)) &#xA;&#x9;decision = True&#xA;End If" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="410,165" sap2010:WorkflowViewState.IdRef="InvokeCode_6">
+                                  <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Procenten sættes til 15, således der er plads til 2 karakterfejl " Code=" Dim n As Integer = str3.Length&#xA;        Dim m As Integer = strControl.Length&#xA;        Dim d(n + 1, m + 1) As Integer&#xA;&#x9;&#x9;decision =False&#xA;&#xA;        If n = 0 Then&#xA;            nr= m&#xA;&#x9;&#x9;Else If m = 0 Then&#xA;            nr= n&#xA;        Else &#xA;        Dim i As Integer&#xA;        Dim j As Integer&#xA;&#xA;        For i = 0 To n&#xA;            d(i, 0) = i&#xA;        Next&#xA;&#xA;        For j = 0 To m&#xA;            d(0, j) = j&#xA;        Next&#xA;&#xA;        For i = 1 To n&#xA;            For j = 1 To m&#xA;&#xA;                Dim cost As Integer&#xA;                If strControl(j - 1) = str3(i - 1) Then&#xA;                    cost = 0&#xA;                Else&#xA;                    cost = 1&#xA;                End If&#xA;&#xA;                d(i, j) = Math.Min(Math.Min(d(i - 1, j) + 1, d(i, j - 1) + 1),&#xA;                                   d(i - 1, j - 1) + cost)&#xA;            Next&#xA;        Next&#xA;nr = d(n, m)&#xA;End If&#xA;If (Math.Truncate((nr * 100) / str3.Length) &lt;= (100-percent)) &#xA;&#x9;decision = True&#xA;End If" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="410,207" sap2010:WorkflowViewState.IdRef="InvokeCode_6">
                                     <ui:InvokeCode.Arguments>
-                                      <InArgument x:TypeArguments="x:String" x:Key="str3">[str3]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="strControl">[currentText.ToString.ToLower]</InArgument>
-                                      <OutArgument x:TypeArguments="x:Int32" x:Key="nr">[result3]</OutArgument>
-                                      <OutArgument x:TypeArguments="x:Boolean" x:Key="decision">[ResultBol3]</OutArgument>
-                                      <InArgument x:TypeArguments="x:Int32" x:Key="percent">90</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="str3">
+                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str3" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="strControl">
+                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="currentText.ToString.ToLower" />
+                                      </InArgument>
+                                      <OutArgument x:TypeArguments="x:Int32" x:Key="nr">
+                                        <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="result3" />
+                                      </OutArgument>
+                                      <OutArgument x:TypeArguments="x:Boolean" x:Key="decision">
+                                        <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="ResultBol3" />
+                                      </OutArgument>
+                                      <InArgument x:TypeArguments="x:Int32" x:Key="percent">
+                                        <Literal x:TypeArguments="x:Int32" Value="85" />
+                                      </InArgument>
                                     </ui:InvokeCode.Arguments>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
                                   </ui:InvokeCode>
                                   <If Condition="[ResultBol3 = true]" sap:VirtualizedContainerService.HintSize="410,476" sap2010:WorkflowViewState.IdRef="If_20">
                                     <If.Then>
@@ -1063,7 +1109,7 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <If sap2010:Annotation.AnnotationText="If-statement, som tjekker om der er nogen ord tilbage i titlen, som længde mæssigt passer til 4 og 5 blacklistet ord" Condition="[WordsArrayStr4.Count = 0 And WordsArrayStr5.Count = 0]" sap:VirtualizedContainerService.HintSize="814,4202" sap2010:WorkflowViewState.IdRef="If_32">
+              <If sap2010:Annotation.AnnotationText="If-statement, som tjekker om der er nogen ord tilbage i titlen, som længde mæssigt passer til 4 og 5 blacklistet ord" Condition="[WordsArrayStr4.Count = 0 And WordsArrayStr5.Count = 0]" sap:VirtualizedContainerService.HintSize="814,4286" sap2010:WorkflowViewState.IdRef="If_32">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1081,19 +1127,19 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="780,3909" sap2010:WorkflowViewState.IdRef="Sequence_83">
+                  <Sequence sap:VirtualizedContainerService.HintSize="780,3993" sap2010:WorkflowViewState.IdRef="Sequence_83">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="738,1740" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[WordsArrayStr4]">
+                    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="738,1782" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[WordsArrayStr4]">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="x:String">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:String" Name="row" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="628,1554" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="628,1596" sap2010:WorkflowViewState.IdRef="Sequence_69">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:Int32" Name="result4" />
                             </Sequence.Variables>
@@ -1102,14 +1148,29 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeCode ContinueOnError="{x:Null}" Code=" Dim n As Integer = str4.Length&#xA;        Dim m As Integer = strControl.Length&#xA;        Dim d(n + 1, m + 1) As Integer&#xA;&#x9;&#x9;decision =False&#xA;&#xA;        If n = 0 Then&#xA;            nr= m&#xA;&#x9;&#x9;Else If m = 0 Then&#xA;            nr= n&#xA;        Else &#xA;        Dim i As Integer&#xA;        Dim j As Integer&#xA;&#xA;        For i = 0 To n&#xA;            d(i, 0) = i&#xA;        Next&#xA;&#xA;        For j = 0 To m&#xA;            d(0, j) = j&#xA;        Next&#xA;&#xA;        For i = 1 To n&#xA;            For j = 1 To m&#xA;&#xA;                Dim cost As Integer&#xA;                If strControl(j - 1) = str4(i - 1) Then&#xA;                    cost = 0&#xA;                Else&#xA;                    cost = 1&#xA;                End If&#xA;&#xA;                d(i, j) = Math.Min(Math.Min(d(i - 1, j) + 1, d(i, j - 1) + 1),&#xA;                                   d(i - 1, j - 1) + cost)&#xA;            Next&#xA;        Next&#xA;nr = d(n, m)&#xA;End If&#xA;If (Math.Truncate((nr * 100) / str4.Length) &lt;= (100-percent)) &#xA;&#x9;decision = True&#xA;End If" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="586,165" sap2010:WorkflowViewState.IdRef="InvokeCode_10">
+                            <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Procenten sættes til 80, således der er plads til 2 karakterfejl " Code=" Dim n As Integer = str4.Length&#xA;        Dim m As Integer = strControl.Length&#xA;        Dim d(n + 1, m + 1) As Integer&#xA;&#x9;&#x9;decision =False&#xA;&#xA;        If n = 0 Then&#xA;            nr= m&#xA;&#x9;&#x9;Else If m = 0 Then&#xA;            nr= n&#xA;        Else &#xA;        Dim i As Integer&#xA;        Dim j As Integer&#xA;&#xA;        For i = 0 To n&#xA;            d(i, 0) = i&#xA;        Next&#xA;&#xA;        For j = 0 To m&#xA;            d(0, j) = j&#xA;        Next&#xA;&#xA;        For i = 1 To n&#xA;            For j = 1 To m&#xA;&#xA;                Dim cost As Integer&#xA;                If strControl(j - 1) = str4(i - 1) Then&#xA;                    cost = 0&#xA;                Else&#xA;                    cost = 1&#xA;                End If&#xA;&#xA;                d(i, j) = Math.Min(Math.Min(d(i - 1, j) + 1, d(i, j - 1) + 1),&#xA;                                   d(i - 1, j - 1) + cost)&#xA;            Next&#xA;        Next&#xA;nr = d(n, m)&#xA;End If&#xA;If (Math.Truncate((nr * 100) / str4.Length) &lt;= (100-percent)) &#xA;&#x9;decision = True&#xA;End If" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="586,207" sap2010:WorkflowViewState.IdRef="InvokeCode_10">
                               <ui:InvokeCode.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="str4">[str4]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="strControl">[row.ToString.ToLower]</InArgument>
-                                <OutArgument x:TypeArguments="x:Int32" x:Key="nr">[result4]</OutArgument>
-                                <OutArgument x:TypeArguments="x:Boolean" x:Key="decision">[ResultBol4]</OutArgument>
-                                <InArgument x:TypeArguments="x:Int32" x:Key="percent">90</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="str4">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str4" />
+                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="strControl">
+                                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="row.ToString.ToLower" />
+                                </InArgument>
+                                <OutArgument x:TypeArguments="x:Int32" x:Key="nr">
+                                  <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="result4" />
+                                </OutArgument>
+                                <OutArgument x:TypeArguments="x:Boolean" x:Key="decision">
+                                  <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="ResultBol4" />
+                                </OutArgument>
+                                <InArgument x:TypeArguments="x:Int32" x:Key="percent">
+                                  <Literal x:TypeArguments="x:Int32" Value="80" />
+                                </InArgument>
                               </ui:InvokeCode.Arguments>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
                             </ui:InvokeCode>
                             <If Condition="[ResultBol4 = true]" sap:VirtualizedContainerService.HintSize="586,1261" sap2010:WorkflowViewState.IdRef="If_33">
                               <If.Then>
@@ -1179,7 +1240,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEach>
-                    <If sap2010:Annotation.AnnotationText="Hvis der ikke findes et blacklistet ord i foregående loop" Condition="[ResultBol4 = False]" sap:VirtualizedContainerService.HintSize="738,2041" sap2010:WorkflowViewState.IdRef="If_35">
+                    <If sap2010:Annotation.AnnotationText="Hvis der ikke findes et blacklistet ord i foregående loop" Condition="[ResultBol4 = False]" sap:VirtualizedContainerService.HintSize="738,2083" sap2010:WorkflowViewState.IdRef="If_35">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1188,19 +1249,19 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="704,1828" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                        <Sequence sap:VirtualizedContainerService.HintSize="704,1870" sap2010:WorkflowViewState.IdRef="Sequence_76">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="662,1740" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[WordsArrayStr5]">
+                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="662,1782" sap2010:WorkflowViewState.IdRef="ForEach`1_10" Values="[WordsArrayStr5]">
                             <ui:ForEach.Body>
                               <ActivityAction x:TypeArguments="x:String">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="x:String" Name="rowitem" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="628,1554" sap2010:WorkflowViewState.IdRef="Sequence_75">
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="628,1596" sap2010:WorkflowViewState.IdRef="Sequence_75">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:Int32" Name="result5" />
                                   </Sequence.Variables>
@@ -1209,14 +1270,29 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeCode ContinueOnError="{x:Null}" Code=" Dim n As Integer = str5.Length&#xA;        Dim m As Integer = strControl.Length&#xA;        Dim d(n + 1, m + 1) As Integer&#xA;&#x9;&#x9;decision =False&#xA;&#xA;        If n = 0 Then&#xA;            nr= m&#xA;&#x9;&#x9;Else If m = 0 Then&#xA;            nr= n&#xA;        Else &#xA;        Dim i As Integer&#xA;        Dim j As Integer&#xA;&#xA;        For i = 0 To n&#xA;            d(i, 0) = i&#xA;        Next&#xA;&#xA;        For j = 0 To m&#xA;            d(0, j) = j&#xA;        Next&#xA;&#xA;        For i = 1 To n&#xA;            For j = 1 To m&#xA;&#xA;                Dim cost As Integer&#xA;                If strControl(j - 1) = str5(i - 1) Then&#xA;                    cost = 0&#xA;                Else&#xA;                    cost = 1&#xA;                End If&#xA;&#xA;                d(i, j) = Math.Min(Math.Min(d(i - 1, j) + 1, d(i, j - 1) + 1),&#xA;                                   d(i - 1, j - 1) + cost)&#xA;            Next&#xA;        Next&#xA;nr = d(n, m)&#xA;End If&#xA;If (Math.Truncate((nr * 100) / str5.Length) &lt;= (100-percent)) &#xA;&#x9;decision = True&#xA;End If" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="586,165" sap2010:WorkflowViewState.IdRef="InvokeCode_11">
+                                  <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Procenten sættes til 80, således der er plads til 2 karakterfejl " Code=" Dim n As Integer = str5.Length&#xA;        Dim m As Integer = strControl.Length&#xA;        Dim d(n + 1, m + 1) As Integer&#xA;&#x9;&#x9;decision =False&#xA;&#xA;        If n = 0 Then&#xA;            nr= m&#xA;&#x9;&#x9;Else If m = 0 Then&#xA;            nr= n&#xA;        Else &#xA;        Dim i As Integer&#xA;        Dim j As Integer&#xA;&#xA;        For i = 0 To n&#xA;            d(i, 0) = i&#xA;        Next&#xA;&#xA;        For j = 0 To m&#xA;            d(0, j) = j&#xA;        Next&#xA;&#xA;        For i = 1 To n&#xA;            For j = 1 To m&#xA;&#xA;                Dim cost As Integer&#xA;                If strControl(j - 1) = str5(i - 1) Then&#xA;                    cost = 0&#xA;                Else&#xA;                    cost = 1&#xA;                End If&#xA;&#xA;                d(i, j) = Math.Min(Math.Min(d(i - 1, j) + 1, d(i, j - 1) + 1),&#xA;                                   d(i - 1, j - 1) + cost)&#xA;            Next&#xA;        Next&#xA;nr = d(n, m)&#xA;End If&#xA;If (Math.Truncate((nr * 100) / str5.Length) &lt;= (100-percent)) &#xA;&#x9;decision = True&#xA;End If" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="586,207" sap2010:WorkflowViewState.IdRef="InvokeCode_11">
                                     <ui:InvokeCode.Arguments>
-                                      <InArgument x:TypeArguments="x:String" x:Key="str5">[str5]</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="strControl">[rowitem.ToString.ToLower]</InArgument>
-                                      <OutArgument x:TypeArguments="x:Int32" x:Key="nr">[result5]</OutArgument>
-                                      <OutArgument x:TypeArguments="x:Boolean" x:Key="decision">[ResultBol5]</OutArgument>
-                                      <InArgument x:TypeArguments="x:Int32" x:Key="percent">90</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="str5">
+                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str5" />
+                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="strControl">
+                                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="rowitem.ToString.ToLower" />
+                                      </InArgument>
+                                      <OutArgument x:TypeArguments="x:Int32" x:Key="nr">
+                                        <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="result5" />
+                                      </OutArgument>
+                                      <OutArgument x:TypeArguments="x:Boolean" x:Key="decision">
+                                        <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="ResultBol5" />
+                                      </OutArgument>
+                                      <InArgument x:TypeArguments="x:Int32" x:Key="percent">
+                                        <Literal x:TypeArguments="x:Int32" Value="80" />
+                                      </InArgument>
                                     </ui:InvokeCode.Arguments>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
                                   </ui:InvokeCode>
                                   <If Condition="[ResultBol5 = true]" sap:VirtualizedContainerService.HintSize="586,1261" sap2010:WorkflowViewState.IdRef="If_34">
                                     <If.Then>
@@ -1337,10 +1413,12 @@
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
-      <Assign sap:VirtualizedContainerService.HintSize="890,83" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign sap:VirtualizedContainerService.HintSize="890,82" sap2010:WorkflowViewState.IdRef="Assign_4">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:DataTable">[out_dt_CaseAndDocumentInfo]</OutArgument>
         </Assign.To>
@@ -1348,7 +1426,7 @@
           <InArgument x:TypeArguments="sd:DataTable">[dt_CaseAndDocumentInfo]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="890,143" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Der findes totalt &quot; + dt_CaseAndDocumentInfo.RowCount.ToString + &quot; som der skal arbejds videre med.&quot;]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="890,141" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Der findes totalt &quot; + dt_CaseAndDocumentInfo.RowCount.ToString + &quot; som der skal arbejds videre med.&quot;]" />
     </Sequence>
   </Sequence>
 </Activity>
