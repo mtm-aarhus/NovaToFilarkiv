@@ -1,13 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetCaseUuid" this:GetCaseUuid.in_CaseNumber="S2021-456011" this:GetCaseUuid.in_Token="eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxN0tmRjAyWFF5UFJUaGM1NWVpSEM3M0lLZjEwdWpPc3FLZkxsV2lMZ0IwIn0.eyJleHAiOjE2OTgwNTc5MzgsImlhdCI6MTY5ODA1MDczOCwianRpIjoiNWU5Y2YzMjAtNTNhZS00MTQ1LWE1ZmQtNzE1YWIxYTdkM2YxIiwiaXNzIjoiaHR0cHM6Ly9ub3ZhYXV0aC5rbWQuZGsvcmVhbG1zL05vdmFJbnRlZ3JhdGlvbiIsImF1ZCI6Imh0dHBzOi8vbm92YWFwaS5rbWQuZGsiLCJzdWIiOiI3NjBhODU5ZC05ZDQxLTQxMGUtYjU0Mi1iOGIyNTgyZDkxNmIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhYXJodXNfa29tbXVuZSIsImFjciI6IjEiLCJzY29wZSI6ImNsaWVudCIsImNsaWVudElkIjoiYWFyaHVzX2tvbW11bmUiLCJjbGllbnRIb3N0IjoiMTkzLjMzLjE0OC42Iiwia3NwX3VzZXIiOiJhem10bTAxIiwiY2xpZW50QWRkcmVzcyI6IjE5My4zMy4xNDguNiIsImN2ciI6IjU1MTMzMDE4In0.o94F1lZxiaoj8qsuzy2kZeNKFawcAcJD2PpOY-CV919OSykODNXQ3uzQPxbMWlMTmcrhL9HBUszPOFwhESJejW5ExpRZ72XxCd_yZNm3TC_WTvhROjyEDU_zm1A7A0O4-Ah_8umwZeZY20paXireVLIkIF1kyg_WENbeNAi0gMIv6iP6fY9uGzk05ER6quXR3TIDDyJfOK5WZNU7lTQeRp-AJ7PqdfRYvnRH2fDV-BmuI7sIOxIZPDzUQferEHC5yh4YsuUcmZdc0c6PHY2j--IIt6iGsWhGPP9BSNI2AyKgZoLriCAjYjjnQQwxYwi0f58ZFWWRxNVgL2TPaDgPOw" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetCaseUuid" this:GetCaseUuid.in_CaseNumber="S2021-456011" this:GetCaseUuid.in_Token="eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxN0tmRjAyWFF5UFJUaGM1NWVpSEM3M0lLZjEwdWpPc3FLZkxsV2lMZ0IwIn0.eyJleHAiOjE2OTkzNTU4MTIsImlhdCI6MTY5OTM0ODYxMiwianRpIjoiYTQ2Y2FjNTAtZWVkZi00ZWJhLWIxYzQtYmE5MjA2YjA4OGJlIiwiaXNzIjoiaHR0cHM6Ly9ub3ZhYXV0aC5rbWQuZGsvcmVhbG1zL05vdmFJbnRlZ3JhdGlvbiIsImF1ZCI6Imh0dHBzOi8vbm92YWFwaS5rbWQuZGsiLCJzdWIiOiI3NjBhODU5ZC05ZDQxLTQxMGUtYjU0Mi1iOGIyNTgyZDkxNmIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhYXJodXNfa29tbXVuZSIsImFjciI6IjEiLCJzY29wZSI6ImNsaWVudCIsImNsaWVudElkIjoiYWFyaHVzX2tvbW11bmUiLCJjbGllbnRIb3N0IjoiMTkzLjMzLjE0OC42Iiwia3NwX3VzZXIiOiJhem10bTAxIiwiY2xpZW50QWRkcmVzcyI6IjE5My4zMy4xNDguNiIsImN2ciI6IjU1MTMzMDE4In0.mGIrJD3xr_fudI-TvHR-HozeYCET40OqLHFm5rBB7HMldsIoNlWc-jZNTeTXApx8cQAn5I6Wd2uclSAN1QhrbjT9JdtETy7dqm2Kvurs0oWQSjzwrpXnzRJvaCdeZTzKU-pC8fNeZq5_MR6pewb6PZ6SNfujl-fvARzl-RJ9PPzc7gyYF0U3HTjRf9VhgI8Ykq1oMu3jwPWdjiQlKLcXhfKjWCmS9518GvjKzbJbhKFIAIhtts3kU8jMAVd_fcD1oSoMiEBKAM01NFyvfNnWO-4-JXSDrc5aC01te-PJkjxiwoycYYS6gt0DvY3y0038DqF8S49AxxbAXs1wwm6dJg" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_CaseNumber" Type="InArgument(x:String)" />
     <x:Property Name="out_CaseUuid" Type="OutArgument(x:String)" />
     <x:Property Name="in_Token" Type="InArgument(x:String)" />
+    <x:Property Name="out_CaseTitle" Type="OutArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1009,1401</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>869,1947</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetCaseUuid_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -101,9 +102,10 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetCaseUuid" sap:VirtualizedContainerService.HintSize="496,1336" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetCaseUuid" sap:VirtualizedContainerService.HintSize="496,1882" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TransactionID" />
       <Variable x:TypeArguments="x:String" Name="json" />
@@ -135,7 +137,7 @@
         <OutArgument x:TypeArguments="x:String">[json]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">["{""common"":{""transactionId"":""" + TransactionID + """},""paging"": {""startRow"": 1,""numberOfRows"": 500},""caseAttributes"": {""userFriendlyCaseNumber"": """+in_CaseNumber+"""},""states"": {""states"": [ {""progressState"": ""Afsluttet""},{""progressState"": ""Udfoert""},{""progressState"": ""Bestilt""},{""progressState"": ""Afgjort""},{""progressState"": ""Oplyst""},{""progressState"": ""Opstaaet""}]}}"]</InArgument>
+        <InArgument x:TypeArguments="x:String">["{""common"":{""transactionId"":""" + TransactionID + """},""paging"": {""startRow"": 1,""numberOfRows"": 500},""caseAttributes"": {""userFriendlyCaseNumber"": """+in_CaseNumber+"""},""states"": {""states"": [ {""progressState"": ""Afsluttet""},{""progressState"": ""Udfoert""},{""progressState"": ""Bestilt""},{""progressState"": ""Afgjort""},{""progressState"": ""Oplyst""},{""progressState"": ""Opstaaet""}]},""caseGetOutput"":{""caseAttributes"":{""title"": true}}}"]</InArgument>
       </Assign.Value>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -167,6 +169,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
+    <ui:LogMessage sap2010:Annotation.AnnotationText="Tjekker status kode" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,172" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[Respons]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
     <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[jobjec]" JsonString="[Respons]" />
     <Assign sap2010:Annotation.AnnotationText="Assinger antal rækker i responsen" DisplayName="Assign NumberOfRows" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
@@ -181,6 +190,20 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
+    <Assign sap2010:Annotation.AnnotationText="Assinger antal rækker i responsen" DisplayName="Assign NumberOfRows" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_CaseTitle]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[jobjec("cases")(0)("caseAttributes")("title").ToString]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;titlen er: &quot;+ out_CaseTitle.ToString]" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Anveder følgende CaseUuid: &quot; + out_CaseUuid]" />
   </Sequence>
 </Activity>
