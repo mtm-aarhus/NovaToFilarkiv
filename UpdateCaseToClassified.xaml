@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetFilArkivCaseInfo" this:GetFilArkivCaseInfo.in_CaseNumber="S2021-456011" this:GetFilArkivCaseInfo.in_Token="eyJhbGciOiJSUzI1NiIsImtpZCI6IkVNcVJ4RGp5OEtIZkpSRzNMS2FGdmZvU2phOCIsInR5cCI6ImF0K2p3dCJ9.eyJzdWIiOiJjX2ZhX2RlX2Fhcmh1c19qb2JfdXNlciIsImF1dGhfdGltZSI6IjE2OTkzNjI3NjIiLCJpZHAtaWQiOiJkMmQ3MzZmMy1mNzQxLTQ2Y2ItZTY0NS0wOGRiOTFjM2E0MGIiLCJuYW1lIjoiU2VydmljZVVzZXIiLCJyZWZyZXNoX2xpZmVfdGltZSI6IjIxNjAwIiwicm9sZSI6ImpvYi1zZXJ2aWNlLXJvbGUiLCJ0ZW5hbnRpZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0xMTEyLTAwMDAwMDAwMDAwOSIsInRlbmFudC1rZXkiOiJhYXJodXMiLCJ0b3RhbF9saWZlX3RpbWUiOiIxMDA4MDAiLCJzY29wZSI6ImZhX2RlX2FwaTpub3JtYWwiLCJjbGllbnRfaWQiOiJmYV9kZV9hYXJodXNfam9iX3VzZXIiLCJuYmYiOjE2OTkzNjI3MDIsImV4cCI6MTY5OTM2NjM2MiwiaWF0IjoxNjk5MzYyNzYyLCJpc3MiOiJodHRwczovL2xvZ2luLmpvLWluZm9ybWF0aWsuZGsvam8taW5mb3JtYXRpay9mYS1wcm9kdWN0aW9uLyIsImF1ZCI6ImZhX2RlX2FwaSJ9.FuG_Gnw3R2aGDYO4wH3RYGRZS3UW3pBUS9HS2LPbMrBYLO8Fyz2meWuc--yYKS7-yKE4QtHfFW1x9-T0GYqko0tvvYF7N6ffqBohmmYfkB3Ew7q0r-4ortTlbgghiuLOL4c1toKMGshdr5FZTYxZuTBw2Aa-R0KUImqVekhaHPc1SlQ7wzJocJzygzA9Kp_aTpV7U5YiKUj2ri0xUkBaehPnxW4z8DHty_ww1xUncreMY_aZ0P3TNHaCStWdksTPypUaKRj_8XOK6beYXJcm1hziDWrLxQNmaK6s3lRSwuoDLA6gkMytT-LgI7EAyGIUra4S0wH8_T2wHl8juJqOYA" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetFilArkivCaseInfo" this:GetFilArkivCaseInfo.in_CaseNumber="S2021-456011" this:GetFilArkivCaseInfo.in_Token="eyJhbGciOiJSUzI1NiIsImtpZCI6InBXdER2MVVOX1dhdGlNbTVraWtSTFNKRHNiWSIsInR5cCI6ImF0K2p3dCJ9.eyJzdWIiOiJjX2ZhX2RlX2Fhcmh1c19qb2JfdXNlciIsImF1dGhfdGltZSI6IjE3MDAxMzc3NjUiLCJpZHAtaWQiOiJkMmQ3MzZmMy1mNzQxLTQ2Y2ItZTY0NS0wOGRiOTFjM2E0MGIiLCJuYW1lIjoiU2VydmljZVVzZXIiLCJyZWZyZXNoX2xpZmVfdGltZSI6IjIxNjAwIiwicm9sZSI6ImpvYi1zZXJ2aWNlLXJvbGUiLCJ0ZW5hbnRpZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0xMTEyLTAwMDAwMDAwMDAwOSIsInRlbmFudC1rZXkiOiJhYXJodXMiLCJ0b3RhbF9saWZlX3RpbWUiOiIxMDA4MDAiLCJzY29wZSI6ImZhX2RlX2FwaTpub3JtYWwiLCJjbGllbnRfaWQiOiJmYV9kZV9hYXJodXNfam9iX3VzZXIiLCJuYmYiOjE3MDAxMzc3MDUsImV4cCI6MTcwMDE0MTM2NSwiaWF0IjoxNzAwMTM3NzY1LCJpc3MiOiJodHRwczovL2xvZ2luLmpvLWluZm9ybWF0aWsuZGsvam8taW5mb3JtYXRpay9mYS1wcm9kdWN0aW9uLyIsImF1ZCI6ImZhX2RlX2FwaSJ9.bMY83ZOt2sd7BaC7OXDh6HhdSz-4qPge1QjV_0dErIgNGXXUNJtiPDwtYmu8LFrG-sObbjV9q_c3RhDPEayi5f1QnY1CqMgSAMDG3iFSjkGTtCW08iqmVf03rVg7whn8PiNI7EefowBnhouvuTHsNSXbCU8JjKBIqwJE_b8_Hd-JSgYrDfTdyaWR9Yef93qKgI6MxPY4Is8XA65_MI2To14viHpFSgJ2JYbpmLk80Mt1i9V6xS2Xtfk1soj2ffttx7Q6GQBw4mkpNf_enA6sW4-hay9kyJbONlHCrFFZJFnM2AaUtw_7sJwjO3hiJn-9iAefYz-MOM-cCGbrvzzm-Q" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_CaseNumber" Type="InArgument(x:String)" />
     <x:Property Name="in_Token" Type="InArgument(x:String)" />
@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>869,2872</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>932,3226</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetFilArkivCaseInfo_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -106,7 +106,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetFilArkivCaseInfo" sap:VirtualizedContainerService.HintSize="572,2807" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetFilArkivCaseInfo" sap:VirtualizedContainerService.HintSize="670,3161" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Respons" />
       <Variable x:TypeArguments="x:Int32" Name="Status" />
@@ -129,8 +129,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Henter information i FilArkiv&quot;]" />
-    <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/xml" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="[&quot;https://core.filarkiv.dk/api/v1/cases?caseNumber=&quot;+in_CaseNumber]" sap:VirtualizedContainerService.HintSize="510,70" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="GET" Result="[Respons]" StatusCode="[Status]" TimeoutMS="30000">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="608,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Henter information i FilArkiv&quot;]" />
+    <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/xml" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="[&quot;https://core.filarkiv.dk/api/v1/cases?caseNumber=&quot;+in_CaseNumber]" sap:VirtualizedContainerService.HintSize="608,70" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="GET" Result="[Respons]" StatusCode="[Status]" TimeoutMS="30000">
       <ui:HttpClient.Attachments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Attachments>
@@ -147,15 +147,15 @@
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.UrlSegments>
     </ui:HttpClient>
-    <ui:LogMessage sap2010:Annotation.AnnotationText="Tjekker status kode" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,172" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[Status]">
+    <ui:LogMessage sap2010:Annotation.AnnotationText="Tjekker status kode" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="608,172" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[Status]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:DeserializeJson x:TypeArguments="njl:JArray" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[Jobject]" JsonString="[Respons]" />
-    <If sap2010:Annotation.AnnotationText="if-statement, som tjekker om sagen findes i filarkiv" Condition="[Jobject.count = 0]" sap:VirtualizedContainerService.HintSize="510,2093" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:DeserializeJson x:TypeArguments="njl:JArray" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="608,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[Jobject]" JsonString="[Respons]" />
+    <If sap2010:Annotation.AnnotationText="if-statement, som tjekker om sagen findes i filarkiv" Condition="[Jobject.count = 0]" sap:VirtualizedContainerService.HintSize="608,2447" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -180,14 +180,14 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="476,1529" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence sap:VirtualizedContainerService.HintSize="574,1883" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Sagen findes i Filarkiv&quot;]" />
-          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="532,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Sagen findes i Filarkiv&quot;]" />
+          <Assign sap:VirtualizedContainerService.HintSize="532,82" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[FilarkivCaseID]</OutArgument>
             </Assign.To>
@@ -195,7 +195,7 @@
               <InArgument x:TypeArguments="x:String">[Jobject(0)("id").ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="434,349" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="532,349" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -273,13 +273,43 @@
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
           </ui:MultipleAssign>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Følgende dato anvendes: &quot; +CaseDate+time]" />
-          <Assign sap2010:Annotation.AnnotationText="Assinger json body som string. Skal anvendes i Http request. Hvis der skal hentes andet data, så det redigeres her" DisplayName="Assign json body" sap:VirtualizedContainerService.HintSize="434,124" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="532,141" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Følgende dato anvendes: &quot; +CaseDate+time]" />
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="532,314" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,235" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap2010:Annotation.AnnotationText="Assinger json body som string. Skal anvendes i Http request. Hvis der skal hentes andet data, så det redigeres her" DisplayName="Assign json body" sap:VirtualizedContainerService.HintSize="434,124" sap2010:WorkflowViewState.IdRef="Assign_5">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[json]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">["{""id"": """+FilarkivCaseID+""",""caseNumber"": """+in_CaseNumber+""",""title"": """+FilarkivTitle+""",""alternateTitle"": """",""caseDate"":"""+CaseDate+""+time+""",""caseTypeId"": """+caseTypeID+""", ""caseStatusId"": """+caseStatusId+""",""archiveId"": """+archiveId+""",""projectId"": null,""companyId"": null,""departmentId"": null,""employeeId"": null,""caseReference"": """+caseReference+""",""securityClassificationLevel"": 1}"]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+              </Sequence>
+            </ui:CommentOut.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CommentOut>
+          <Assign sap2010:Annotation.AnnotationText="Assinger json body som string. Skal anvendes i Http request. Hvis der skal hentes andet data, så det redigeres her" DisplayName="Assign json body" sap:VirtualizedContainerService.HintSize="532,124" sap2010:WorkflowViewState.IdRef="Assign_8">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[json]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">["{""id"": """+FilarkivCaseID+""",""caseNumber"": """+in_CaseNumber+""",""title"": """+FilarkivTitle+""",""alternateTitle"": """",""caseDate"":"""+CaseDate+""+time+""",""caseTypeId"": """+caseTypeID+""", ""caseStatusId"": """+caseStatusId+""",""archiveId"": """+archiveId+""",""projectId"": null,""companyId"": null,""departmentId"": null,""employeeId"": null,""caseReference"": """+caseReference+""",""securityClassificationLevel"": 1}"]</InArgument>
+              <InArgument x:TypeArguments="x:String">["{""id"": """+FilarkivCaseID+""",""securityClassificationLevel"": 0}"]</InArgument>
             </Assign.Value>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -287,7 +317,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Assign>
-          <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[json]" BodyFormat="application/Json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="https://core.filarkiv.dk/api/v1/Cases" sap:VirtualizedContainerService.HintSize="434,70" sap2010:WorkflowViewState.IdRef="HttpClient_3" Method="PUT" Result="[CaseRespons]" StatusCode="[Status]" TimeoutMS="30000">
+          <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[json]" BodyFormat="application/Json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="https://core.filarkiv.dk/api/v1/Cases/UpdateSecurityClassificationLevel" sap:VirtualizedContainerService.HintSize="532,70" sap2010:WorkflowViewState.IdRef="HttpClient_3" Method="PUT" Result="[CaseRespons]" StatusCode="[Status]" TimeoutMS="30000">
             <ui:HttpClient.Attachments>
               <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
             </ui:HttpClient.Attachments>
@@ -304,14 +334,14 @@
               <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
             </ui:HttpClient.UrlSegments>
           </ui:HttpClient>
-          <ui:LogMessage sap2010:Annotation.AnnotationText="Tjekker status kode" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,172" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[CaseStatus]">
+          <ui:LogMessage sap2010:Annotation.AnnotationText="Tjekker status kode" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="532,172" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[CaseStatus]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+          <Assign sap:VirtualizedContainerService.HintSize="532,82" sap2010:WorkflowViewState.IdRef="Assign_7">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[out_CaseInFilArkiv]</OutArgument>
             </Assign.To>

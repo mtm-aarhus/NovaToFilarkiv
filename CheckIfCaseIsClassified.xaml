@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>869,4153</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1226,4153</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CheckIfCaseIsClassified_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -148,7 +148,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:MultipleAssign sap2010:Annotation.AnnotationText="Initializer 5 lister, som skal indeholde de ord/rækker, som har et blacklistet ord. Og pre-assigner bools til False, til senere brug" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="568,174" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="Initializer listen, som skal indeholde de ord/rækker, som har et blacklistet ord. Og pre-assigner bools til False, til senere brug" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="568,174" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -210,7 +210,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="300,81" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -346,15 +346,9 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="UpdateCaseToClassified.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="UpdateCaseToClassified.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_CaseNumber">
-                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_CaseNumber" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_Token">
-                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Token" />
-                      </InArgument>
-                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_CaseInFilArkiv">
-                        <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="CaseInFilArkiv" />
-                      </OutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_CaseNumber">[in_CaseNumber]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Token">[Token]</InArgument>
+                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_CaseInFilArkiv">[CaseInFilArkiv]</OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                 </Sequence>

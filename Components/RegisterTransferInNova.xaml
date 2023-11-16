@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1009,1498</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>869,1105</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>RegisterTransferInNova_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -95,9 +95,10 @@
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
       <AssemblyReference>UiPath.Web</AssemblyReference>
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="RegisterTransferInNova" sap:VirtualizedContainerService.HintSize="592,1433" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="RegisterTransferInNova" sap:VirtualizedContainerService.HintSize="592,1040" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TransactionID" />
       <Variable x:TypeArguments="x:String" Name="json" />
@@ -111,19 +112,18 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Opdaterer dokumenterne tilhørende sagen&quot;]" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dt_CaseAndDocumentInfo]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="530,1141" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dt_CaseAndDocumentInfo]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="530,748" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,1024" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,631" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Opdaterer Medie/Kanal på DocumentNumber: &quot; + CurrentRow(&quot;DocumentNumber&quot;).ToString]" />
             <Assign sap2010:Annotation.AnnotationText="Opretter guid til transaction ID&#xA;" DisplayName="Assign Transaction ID" sap:VirtualizedContainerService.HintSize="434,124" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[TransactionID]</OutArgument>
@@ -175,13 +175,6 @@
                 <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
               </ui:HttpClient.UrlSegments>
             </ui:HttpClient>
-            <ui:LogMessage sap2010:Annotation.AnnotationText="Tjekker status kode" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,172" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[Status]">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:LogMessage>
           </Sequence>
         </ActivityAction>
       </ui:ForEachRow.Body>
