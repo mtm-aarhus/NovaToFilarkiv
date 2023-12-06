@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>869,2783</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1071,4245</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -116,7 +116,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="626,2718" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="648,4180" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="RequestVerification" />
       <Variable x:TypeArguments="x:String" Name="LogonWebSession" />
@@ -138,9 +138,9 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="564,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="586,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,192" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -163,34 +163,24 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="564,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Henter dokumenter tilhørende sagsnummer: &quot; + CaseNumber]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckIfCaseExistInFilArkiv.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="564,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Components\CheckIfCaseExistInFilArkiv.xaml">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Henter dokumenter tilhørende sagsnummer: &quot; + CaseNumber]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckIfCaseExistInFilArkiv.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="586,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Components\CheckIfCaseExistInFilArkiv.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_CaseNumber">[CaseNumber]</InArgument>
         <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_DocumentNumber">[dt_DocumentNumber]</OutArgument>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_DoesCaseExist">[DoesCaseExist]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetCaseAndDocumentInfo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="564,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Components\GetCaseAndDocumentInfo.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetCaseAndDocumentInfo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="586,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Components\GetCaseAndDocumentInfo.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_CaseAndDocumentInfo">
-          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_CaseAndDocumentInfo" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_CaseID">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="CaseID" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_KMDAPIToken">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="KMDAPIToken" />
-        </OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_CaseNumber">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CaseNumber" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_CaseTitle">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="CaseTitle" />
-        </OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_CaseAndDocumentInfo">[dt_CaseAndDocumentInfo]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_CaseID">[CaseID]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_KMDAPIToken">[KMDAPIToken]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_CaseNumber">[CaseNumber]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_CaseTitle">[CaseTitle]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <If sap2010:Annotation.AnnotationText="If-statement, som tjekker om sagen findes i filarkiv i forvejen. Hvis den gør det, fjernes existerende dokumentet fra datatabellen, som skal uploades til filarkiv" Condition="[DoesCaseExist = True]" sap:VirtualizedContainerService.HintSize="564,621" sap2010:WorkflowViewState.IdRef="If_1">
+    <If sap2010:Annotation.AnnotationText="If-statement, som tjekker om sagen findes i filarkiv i forvejen. Hvis den gør det, fjernes existerende dokumentet fra datatabellen, som skal uploades til filarkiv" Condition="[DoesCaseExist = True]" sap:VirtualizedContainerService.HintSize="586,621" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -223,14 +213,30 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendDocumentsToFilarkiv.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="564,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Components\SendDocumentsToFilarkiv.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckIfDocumentIsClassified.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="586,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="CheckIfDocumentIsClassified.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_CaseNumber">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CaseNumber" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_CaseUuid">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CaseID" />
+        </InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_CaseAndDocumentInfo">
+          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_CaseAndDocumentInfo" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_KMDAPIToken">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="KMDAPIToken" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendDocumentsToFilarkiv.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="586,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Components\SendDocumentsToFilarkiv.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_CaseId">[CaseID]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_CaseNumber">[CaseNumber]</InArgument>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_CaseAndDocumentInfo">[dt_CaseAndDocumentInfo]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckIfCaseIsClassified.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="564,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="CheckIfCaseIsClassified.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckIfCaseIsClassified.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="586,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="CheckIfCaseIsClassified.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_CaseTitle">
           <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CaseTitle" />
@@ -240,7 +246,7 @@
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <If sap2010:Annotation.AnnotationText="If-statement, som tjekker om der er overført nogen nye sager til FilArkiv. Hvis der ikke er dette, skal der ikke registreres noget i databasen. Der fortsættes derfor videre til næste sag" Condition="[dt_CaseAndDocumentInfo.RowCount &gt;0]" sap:VirtualizedContainerService.HintSize="564,989" sap2010:WorkflowViewState.IdRef="If_2">
+    <If sap2010:Annotation.AnnotationText="If-statement, som tjekker om der er overført nogen nye sager til FilArkiv. Hvis der ikke er dette, skal der ikke registreres noget i databasen. Der fortsættes derfor videre til næste sag" Condition="[dt_CaseAndDocumentInfo.RowCount &gt;0]" sap:VirtualizedContainerService.HintSize="586,2298" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -311,7 +317,7 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="552,1080" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence sap:VirtualizedContainerService.HintSize="552,1309" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -325,7 +331,7 @@
               <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_StorageBucket">[dt_StorageBucket]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <If Condition="[DataInStorageBucket= true]" sap:VirtualizedContainerService.HintSize="510,658" sap2010:WorkflowViewState.IdRef="If_3">
+          <If Condition="[DataInStorageBucket= true]" sap:VirtualizedContainerService.HintSize="510,887" sap2010:WorkflowViewState.IdRef="If_3">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="476,476" sap2010:WorkflowViewState.IdRef="Sequence_9">
                 <sap:WorkflowViewStateService.ViewState>
