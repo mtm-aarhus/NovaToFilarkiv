@@ -1,0 +1,178 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="NovaLogin_New" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_requestVerificationToken" Type="OutArgument(x:String)" />
+    <x:Property Name="out_kmdLogonWebSessionHandler" Type="OutArgument(x:String)" />
+    <x:Property Name="Out_VerificationToken" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1019,919</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>NovaLogin_New_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>OpenQA.Selenium</x:String>
+      <x:String>OpenQA.Selenium.Chrome</x:String>
+      <x:String>OpenQA.Selenium.Chromium</x:String>
+      <x:String>OpenQA.Selenium.Support.UI</x:String>
+      <x:String>SeleniumExtras.WaitHelpers</x:String>
+      <x:String>OpenQA.Selenium.Edge</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>WebDriver</AssemblyReference>
+      <AssemblyReference>WebDriver.Support</AssemblyReference>
+      <AssemblyReference>SeleniumExtras.WaitHelpers</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="NovaLogin_New" sap:VirtualizedContainerService.HintSize="496,854" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="UserName" />
+      <Variable x:TypeArguments="ss:SecureString" Name="Password" />
+      <Variable x:TypeArguments="x:String" Name="strPassword" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Henter login credentials med selenium workflow&quot;]" />
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="KMDNovaLogin" CacheStrategy="None" DisplayName="Get Credential" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_7" Password="[Password]" Username="[UserName]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,254" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="KMDNovaLoginRykkerRobot" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_6" Password="[Password]" Username="[UserName]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strPassword]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[new System.Net.NetworkCredential(string.Empty, Password).Password]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="try&#xA;{&#xA;&#x9;string[] pathParts = System.IO.Path.GetDirectoryName(typeof(OpenQA.Selenium.By).Assembly.Location).Split(Path.DirectorySeparatorChar);&#xA;    &#xA;    int seleniumFolderIndex = Array.IndexOf(pathParts, &quot;selenium.webdriver&quot;);&#xA;    string newPath=&quot;&quot;;&#xA;    if (seleniumFolderIndex != -1 &amp;&amp; seleniumFolderIndex &lt; pathParts.Length - 1)&#xA;        {&#xA;            string versionFolder = pathParts[seleniumFolderIndex + 1];&#xA;            &#xA;            string versionFolderPath = string.Join(&quot;\\&quot;, pathParts.Take(seleniumFolderIndex + 2));&#xA;            DirectoryInfo versionDirectory = new DirectoryInfo(versionFolderPath);&#xA;            &#xA;            newPath = System.IO.Directory.GetFiles(versionDirectory.FullName, &quot;*manager*.exe&quot;, SearchOption.AllDirectories).FirstOrDefault();&#xA;            System.Environment.SetEnvironmentVariable(&quot;SE_MANAGER_PATH&quot;, newPath);&#xA;        }&#xA;&#xA;&#xA;&#x9;// Initialize the Edge driver with the specified options&#xA;&#x9;&#xA;&#x9;string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);&#xA;&#x9;string edgeUserDataPath = System.IO.Path.Combine(appDataPath, &quot;Microsoft&quot;, &quot;Edge&quot;, &quot;User Data&quot;);&#xA;&#x9;    &#xA;&#x9;var options = new EdgeOptions();&#xA;&#x9;options.AddArgument(&quot;--headless=new&quot;);&#xA;&#x9;options.AddArgument(&quot;--user-data-dir=&quot;+edgeUserDataPath);&#xA;&#x9;options.AddArgument(&quot;--window-size=1920,900&quot;);&#xA;&#x9;options.AddArgument(&quot;--start-maximized&quot;);&#xA;&#x9;options.AddArgument(&quot;force-device-scale-factor=0,5&quot;);&#xA;&#x9;options.AddArgument(&quot;--disable-extensions&quot;);&#xA;&#x9;options.AddArgument(&quot;--profile-directory=Default&quot;);&#xA;&#x9;options.AddArgument(&quot;--remote-debugging-port=9222&quot;);&#xA;&#x9;&#xA;&#x9;var driver = new EdgeDriver(options);&#xA;&#x9;&#x9;&#xA;&#x9;&#xA;    Console.WriteLine(&quot;Creating WebDriver...&quot;);&#xA;    &#xA;    Console.WriteLine(&quot;Navigating to URL...&quot;);&#xA;    driver.Navigate().GoToUrl(&quot;https://cap-wsswlbs-wm3q2021.kmd.dk/KMD.YH.KMDLogonWEB.NET/AspSson.aspx?KmdLogon_sApplCallback=https://capwebwlbs-wm2q2012.kmd.dk/KMDNovaESDH/forside&amp;KMDLogon_sProtocol=tcpip&amp;KMDLogon_sApplPrefix=--&amp;KMDLogon_sOrigin=ApplAsp&amp;ExtraData=true&quot;);&#xA;  &#x9;Console.WriteLine(&quot;Maximizing window...&quot;);&#xA;    driver.Manage().Window.Maximize();&#xA;&#x9;&#xA;&#x9;WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));&#xA;&#xA;    // Log in&#xA;    wait.Until(ExpectedConditions.ElementIsVisible(By.Name(&quot;UserInfo.Username&quot;))).SendKeys(Username);&#xA;    wait.Until(ExpectedConditions.ElementIsVisible(By.Name(&quot;UserInfo.Password&quot;))).SendKeys(Password);&#xA;    wait.Until(ExpectedConditions.ElementToBeClickable(By.Id(&quot;logonBtn&quot;))).Click();&#xA;&#x9;Console.WriteLine(&quot;Der er logget ind på hjemmesiden&quot;);&#xA;&#x9;//new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector(&quot;cssSelectorClickableElement&quot;)));&#xA;&#x9;//System.Threading.Thread.Sleep(9000);&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;// Assuming you have a WebDriver instance named 'driver'&#xA;&#x9;var cookiesList = driver.Manage().Cookies.AllCookies;&#xA;&#x9;&#xA;&#x9;// Iterate over all cookies and print them&#xA;&#x9;foreach (var cookie in cookiesList)&#xA;&#x9;{&#xA;&#x9;    Console.WriteLine($&quot;Cookie Name: {cookie.Name}, Cookie Value: {cookie.Value}&quot;);&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;// Existing code for specific cookies retrieval&#xA;&#x9;Func&lt;IReadOnlyCollection&lt;OpenQA.Selenium.Cookie&gt;, string, string&gt; GetCookieValue = (cookies, name) =&gt;&#xA;&#x9;{&#xA;&#x9;    var cookie = cookies.FirstOrDefault(c =&gt; c.Name == name);&#xA;&#x9;    return cookie != null ? cookie.Value : null;&#xA;&#x9;};&#xA;&#x9;&#xA;&#x9;// Retrieve values for specific cookies&#xA;&#x9;Out_VerificationToken= GetCookieValue(cookiesList, &quot;__RequestVerificationToken_L0tNRE5vdmFFU0RI0&quot;);&#xA;&#x9;out_kmdLogonWebSessionHandler = GetCookieValue(cookiesList, &quot;KMDLogonWebSessionHandler&quot;);&#xA;&#xA;&#xA;&#x9;// Print the values&#xA;&#x9;Console.WriteLine(&quot;VerificationToken: &quot; + Out_VerificationToken);&#xA;&#x9;Console.WriteLine(&quot;KMDLogonWebSessionHandler: &quot; + out_kmdLogonWebSessionHandler);&#xA;&#xA;&#x9;// Find the element using its XPath&#xA;&#x9;var elements = driver.FindElements(By.XPath(&quot;/html/body/input[1]&quot;));&#xA;&#xA;&#x9;out_requestVerificationToken = null;&#xA;&#xA;&#x9;// Check if the element is found&#xA;&#x9;if (elements.Any())&#xA;&#x9;{&#xA;    &#x9;// Get the first element from the list&#xA;    &#x9;var element = elements.First();&#xA;&#xA;    &#x9;// Get the value of the 'ncg-request-verification-token' attribute&#xA;    &#x9;out_requestVerificationToken = element.GetAttribute(&quot;ncg-request-verification-token&quot;);&#xA;&#xA;    &#x9;// Print the value&#xA;   &#x9; Console.WriteLine(&quot;request-verification-token: &quot; + out_requestVerificationToken);&#xA;&#x9;}&#xA;&#x9;else&#xA;&#x9;{&#xA;    &#x9;Console.WriteLine(&quot;Element not found&quot;);&#xA;&#x9;}&#xA;&#xA;&#x9;// Close the browser&#xA;&#x9;driver.Quit();&#xA;}&#xA;catch (Exception e)&#xA;{&#xA;&#x9;Console.WriteLine(e);&#xA;&#x9;throw;&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="434,165" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="Username">[UserName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Password">[strPassword]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_requestVerificationToken">[out_requestVerificationToken]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_kmdLogonWebSessionHandler">[out_kmdLogonWebSessionHandler]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_VerificationToken">[Out_VerificationToken]</OutArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+  </Sequence>
+</Activity>
