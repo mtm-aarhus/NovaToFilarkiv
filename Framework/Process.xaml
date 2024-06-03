@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1019,4184</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1228,4153</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -116,7 +116,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="648,4119" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="648,4088" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="RequestVerification" />
       <Variable x:TypeArguments="x:String" Name="LogonWebSession" />
@@ -131,6 +131,7 @@
       <Variable x:TypeArguments="sd:DataTable" Name="dt_StorageBucket" />
       <Variable x:TypeArguments="x:String" Name="dt_UploadToStorage" />
       <Variable x:TypeArguments="x:String" Name="CaseTitle" />
+      <Variable x:TypeArguments="x:String" Name="KMDNovaURL" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -163,6 +164,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
+    <Assign DisplayName="Assigner KMD NOVA API url" sap:VirtualizedContainerService.HintSize="586,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[KMDNovaURL]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["https://novaapi.kmdnova.dk/api"]</InArgument>
+      </Assign.Value>
+    </Assign>
     <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Henter dokumenter tilhørende sagsnummer: &quot; + CaseNumber]" />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckIfCaseExistInFilArkiv.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="586,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Components\CheckIfCaseExistInFilArkiv.xaml">
       <ui:InvokeWorkflowFile.Arguments>
@@ -251,20 +260,20 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_CaseNumber">[CaseNumber]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <If sap2010:Annotation.AnnotationText="If-statement, som tjekker om der er overført nogen nye sager til FilArkiv. Hvis der ikke er dette, skal der ikke registreres noget i databasen. Der fortsættes derfor videre til næste sag" Condition="[dt_CaseAndDocumentInfo.RowCount &gt;0]" sap:VirtualizedContainerService.HintSize="586,2298" sap2010:WorkflowViewState.IdRef="If_2">
+    <If sap2010:Annotation.AnnotationText="If-statement, som tjekker om der er overført nogen nye sager til FilArkiv. Hvis der ikke er dette, skal der ikke registreres noget i databasen. Der fortsættes derfor videre til næste sag" Condition="[dt_CaseAndDocumentInfo.RowCount &gt;0]" sap:VirtualizedContainerService.HintSize="586,2145" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="530,765" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence sap:VirtualizedContainerService.HintSize="530,612" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch sap2010:Annotation.AnnotationText="Try catch, som først skal forsøge at logge info til databasen. Hvis der skulle ske en BRE eller SE, bliver datatabellen overført til Orchestrator storage bucket. Når queue-item så bliver kørt igen, vil der ikke være nogen rækker i dt_caseAndDocumentInfo, og derfor vil den gå over i else" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488,677" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+          <TryCatch sap2010:Annotation.AnnotationText="Try catch, som først skal forsøge at logge info til databasen. Hvis der skulle ske en BRE eller SE, bliver datatabellen overført til Orchestrator storage bucket. Når queue-item så bliver kørt igen, vil der ikke være nogen rækker i dt_caseAndDocumentInfo, og derfor vil den gå over i else" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488,524" sap2010:WorkflowViewState.IdRef="TryCatch_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -273,18 +282,12 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence sap:VirtualizedContainerService.HintSize="450,377" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence sap:VirtualizedContainerService.HintSize="450,224" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="RegisterTransferInNova.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Components\RegisterTransferInNova.xaml">
-                  <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_CaseAndDocumentInfo">[dt_CaseAndDocumentInfo]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_KMDAPIToken">[KMDAPIToken]</InArgument>
-                  </ui:InvokeWorkflowFile.Arguments>
-                </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogInfoToDataBase.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Components\LogInfoToDataBase.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
                     <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_CaseAndDocumentInfo">[dt_CaseAndDocumentInfo]</InArgument>
