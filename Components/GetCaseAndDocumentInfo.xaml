@@ -135,10 +135,22 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetDocumentInfo_New.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Components\GetDocumentInfo_New.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_CaseNumber">[in_CaseNumber]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Token">[Token]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_CaseUuid">[CaseUuid]</InArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_CaseAndDocumentInfo">[dt_CaseAndDocumentInfo]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_CaseNumber">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_CaseNumber" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Token">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Token" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_CaseUuid">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CaseUuid" />
+        </InArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_CaseAndDocumentInfo">
+          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_CaseAndDocumentInfo" />
+        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_KMDNovaURL">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_KMDNovaURL" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
