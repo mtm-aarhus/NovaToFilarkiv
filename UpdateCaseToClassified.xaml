@@ -7,6 +7,7 @@
     <x:Property Name="in_ResultBol2" Type="InArgument(x:Boolean)" />
     <x:Property Name="in_ResultBol3" Type="InArgument(x:Boolean)" />
     <x:Property Name="in_ResultBol4" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_ResultBol5" Type="InArgument(x:Boolean)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -198,7 +199,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Sagen findes i Filarkiv&quot;]" />
-          <If Condition="[in_ResultBol1 = True OrElse in_ResultBol2 = True OrElse in_ResultBol3 = True OrElse in_ResultBol4 = True]" sap:VirtualizedContainerService.HintSize="510,626" sap2010:WorkflowViewState.IdRef="If_3">
+          <If Condition="[in_ResultBol1 = True OrElse in_ResultBol2 = True OrElse in_ResultBol3 = True OrElse in_ResultBol4 = True OrElse in_ResultBol5 = True]" sap:VirtualizedContainerService.HintSize="510,626" sap2010:WorkflowViewState.IdRef="If_3">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="476,444" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>

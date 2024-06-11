@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1019,3620</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1228,3620</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetKMDWebInfo_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -103,7 +103,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="KMDWebTimeStamp" CacheStrategy="None" DisplayName="Get Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_4">
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="KMDWebTimeStampNovaToFilarkiv" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_4">
       <ui:GetRobotAsset.Value>
         <OutArgument x:TypeArguments="x:String">[OldTimeStamp]</OutArgument>
       </ui:GetRobotAsset.Value>
@@ -167,17 +167,17 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Token er hentet for under 15 time siden, og derfor kan den samme anvendes&quot;]" />
-          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="KMDLogonWebSession" CacheStrategy="None" DisplayName="Get Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_5">
+          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="KMDLogonWebSessionNovaToFilarkiv" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_5">
             <ui:GetRobotAsset.Value>
               <OutArgument x:TypeArguments="x:String">[out_LogonWebSession]</OutArgument>
             </ui:GetRobotAsset.Value>
           </ui:GetRobotAsset>
-          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="KMDRequestVerification" CacheStrategy="None" DisplayName="Get Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_6">
+          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="KMDRequestVerificationNovaToFilarkiv" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_6">
             <ui:GetRobotAsset.Value>
               <OutArgument x:TypeArguments="x:String">[out_RequestVerification]</OutArgument>
             </ui:GetRobotAsset.Value>
           </ui:GetRobotAsset>
-          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="KMDVerificationToken" CacheStrategy="None" DisplayName="Get Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_7">
+          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="KMDVerificationTokenNovaToFilarkiv" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_7">
             <ui:GetRobotAsset.Value>
               <OutArgument x:TypeArguments="x:String">[out_VerificationToken]</OutArgument>
             </ui:GetRobotAsset.Value>
@@ -200,21 +200,15 @@
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Token er udløbet, der hentes en ny&quot;]" />
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="NovaLogin_New.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="NovaLogin_New.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <OutArgument x:TypeArguments="x:String" x:Key="out_requestVerificationToken">
-                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_RequestVerification" />
-              </OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="out_kmdLogonWebSessionHandler">
-                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_LogonWebSession" />
-              </OutArgument>
-              <OutArgument x:TypeArguments="x:String" x:Key="Out_VerificationToken">
-                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_VerificationToken" />
-              </OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_requestVerificationToken">[out_RequestVerification]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_kmdLogonWebSessionHandler">[out_LogonWebSession]</OutArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="Out_VerificationToken">[out_VerificationToken]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:SetAsset TimeoutMS="{x:Null}" AssetName="KMDRequestVerification" DisplayName="Set Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="334,194" sap2010:WorkflowViewState.IdRef="SetAsset_2" Value="[out_RequestVerification]" />
-          <ui:SetAsset TimeoutMS="{x:Null}" AssetName="KMDVerificationToken" DisplayName="Set Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="334,194" sap2010:WorkflowViewState.IdRef="SetAsset_3" Value="[out_VerificationToken]" />
-          <ui:SetAsset TimeoutMS="{x:Null}" AssetName="KMDLogonWebSession" DisplayName="Set Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="334,194" sap2010:WorkflowViewState.IdRef="SetAsset_4" Value="[out_LogonWebSession]" />
-          <ui:SetAsset TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Det nye timestamp opdateres i orchestrator " AssetName="KMDWebTimeStamp" DisplayName="Set Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="334,225" sap2010:WorkflowViewState.IdRef="SetAsset_5" Value="[CurrentTimestamp]">
+          <ui:SetAsset TimeoutMS="{x:Null}" AssetName="KMDRequestVerificationNovaToFilarkiv" DisplayName="Set Asset" sap:VirtualizedContainerService.HintSize="334,194" sap2010:WorkflowViewState.IdRef="SetAsset_2" Value="[out_RequestVerification]" />
+          <ui:SetAsset TimeoutMS="{x:Null}" AssetName="KMDVerificationTokenNovaToFilarkiv" DisplayName="Set Asset" sap:VirtualizedContainerService.HintSize="334,194" sap2010:WorkflowViewState.IdRef="SetAsset_3" Value="[out_VerificationToken]" />
+          <ui:SetAsset TimeoutMS="{x:Null}" AssetName="KMDLogonWebSessionNovaToFilarkiv" DisplayName="Set Asset" sap:VirtualizedContainerService.HintSize="334,194" sap2010:WorkflowViewState.IdRef="SetAsset_4" Value="[out_LogonWebSession]" />
+          <ui:SetAsset TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Det nye timestamp opdateres i orchestrator " AssetName="KMDWebTimeStampNovaToFilarkiv" DisplayName="Set Asset" sap:VirtualizedContainerService.HintSize="334,225" sap2010:WorkflowViewState.IdRef="SetAsset_5" Value="[CurrentTimestamp]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>

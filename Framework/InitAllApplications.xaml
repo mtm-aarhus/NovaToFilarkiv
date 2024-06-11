@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1019,2058</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1228,2058</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -138,20 +138,14 @@
     </ui:CommentOut>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="NovaLogin_New.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="NovaLogin_New.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_requestVerificationToken">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="RequestVerification" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_kmdLogonWebSessionHandler">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="LogonWebSession" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="Out_VerificationToken">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="VerificationToken" />
-        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_requestVerificationToken">[RequestVerification]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_kmdLogonWebSessionHandler">[LogonWebSession]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_VerificationToken">[VerificationToken]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:SetAsset TimeoutMS="{x:Null}" AssetName="KMDRequestVerification" DisplayName="Set Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="434,194" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[RequestVerification]" />
-    <ui:SetAsset TimeoutMS="{x:Null}" AssetName="KMDVerificationToken" DisplayName="Set Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="434,194" sap2010:WorkflowViewState.IdRef="SetAsset_3" Value="[VerificationToken]" />
-    <ui:SetAsset TimeoutMS="{x:Null}" AssetName="KMDLogonWebSession" DisplayName="Set Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="434,194" sap2010:WorkflowViewState.IdRef="SetAsset_2" Value="[LogonWebSession]" />
+    <ui:SetAsset TimeoutMS="{x:Null}" AssetName="KMDRequestVerificationNovaToFilarkiv" DisplayName="Set Asset" sap:VirtualizedContainerService.HintSize="434,194" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[RequestVerification]" />
+    <ui:SetAsset TimeoutMS="{x:Null}" AssetName="KMDVerificationTokenNovaToFilarkiv" DisplayName="Set Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="434,194" sap2010:WorkflowViewState.IdRef="SetAsset_3" Value="[VerificationToken]" />
+    <ui:SetAsset TimeoutMS="{x:Null}" AssetName="KMDLogonWebSessionNovaToFilarkiv" DisplayName="Set Asset" sap:VirtualizedContainerService.HintSize="434,194" sap2010:WorkflowViewState.IdRef="SetAsset_2" Value="[LogonWebSession]" />
     <Assign sap2010:Annotation.AnnotationText="henter nuværende dato og tid" DisplayName="Assign current time" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[CurrentTimestamp]</OutArgument>
@@ -165,7 +159,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:SetAsset TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Det nye timestamp opdateres i orchestrator " AssetName="KMDWebTimeStamp" DisplayName="Set Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="SetAsset_4" Value="[CurrentTimestamp]">
+    <ui:SetAsset TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Det nye timestamp opdateres i orchestrator " AssetName="KMDWebTimeStampNovaToFilarkiv" DisplayName="Set Asset" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="SetAsset_4" Value="[CurrentTimestamp]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>

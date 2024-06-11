@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1009,3466</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1228,3466</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetFilArkivAccessToken_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -104,12 +104,12 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="FilarkivTokenTimestamp" CacheStrategy="None" DisplayName="Get TokenTimestamp Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="510,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_3">
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="FilarkivTokenTimestamp" CacheStrategy="None" DisplayName="Get TokenTimestamp Asset" sap:VirtualizedContainerService.HintSize="510,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_3">
         <ui:GetRobotAsset.Value>
           <OutArgument x:TypeArguments="x:String">[OldTimestamp]</OutArgument>
         </ui:GetRobotAsset.Value>
       </ui:GetRobotAsset>
-      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="FilarkivAPIToken" CacheStrategy="None" DisplayName="Get Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="510,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_4">
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="FilarkivAPIToken" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="510,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_4">
         <ui:GetRobotAsset.Value>
           <OutArgument x:TypeArguments="x:String">[OldToken]</OutArgument>
         </ui:GetRobotAsset.Value>
@@ -233,7 +233,7 @@
               </Assign.Value>
             </Assign>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Respons_Split er : &quot; + out_Token]" />
-            <ui:SetAsset TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Da der hentes en ny token, sættes denne ind i orchestrator&#xA;" AssetName="FilarkivAPIToken" DisplayName="Set Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="434,251" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[out_Token]">
+            <ui:SetAsset TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Da der hentes en ny token, sættes denne ind i orchestrator&#xA;" AssetName="FilarkivAPIToken" DisplayName="Set Asset" sap:VirtualizedContainerService.HintSize="434,251" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[out_Token]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -243,7 +243,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <ui:SetAsset TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Det nye timestamp opdateres i orchestrator " AssetName="FilarkivTokenTimestamp" DisplayName="Set Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="510,225" sap2010:WorkflowViewState.IdRef="SetAsset_2" Value="[CurrentTimestamp]">
+      <ui:SetAsset TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Det nye timestamp opdateres i orchestrator " AssetName="FilarkivTokenTimestamp" DisplayName="Set Asset" sap:VirtualizedContainerService.HintSize="510,225" sap2010:WorkflowViewState.IdRef="SetAsset_2" Value="[CurrentTimestamp]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
