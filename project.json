@@ -10,6 +10,7 @@
     "SeleniumExtras.WaitHelpers": "[1.0.2]",
     "UiPath.Database.Activities": "[1.7.1]",
     "UiPath.Excel.Activities": "[2.20.2]",
+    "UiPath.Mail.Activities": "[1.20.0]",
     "UiPath.MicrosoftOffice365.Activities": "[2.4.3]",
     "UiPath.System.Activities": "[23.4.3]",
     "UiPath.Testing.Activities": "[23.4.1]",
@@ -20,7 +21,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.4.2.0",
-  "projectVersion": "1.0.1",
+  "projectVersion": "1.0.7",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,

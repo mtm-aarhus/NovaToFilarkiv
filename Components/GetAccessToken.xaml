@@ -101,7 +101,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="TokenTimestampNovaToFilarkiv" CacheStrategy="None" DisplayName="Get TokenTimestamp Asset" sap:VirtualizedContainerService.HintSize="510,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="TokenTimestampNovaToFilarkiv" CacheStrategy="None" DisplayName="Get TokenTimestamp Asset" FolderPath="az72987@adm's workspace" sap:VirtualizedContainerService.HintSize="510,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
       <ui:GetRobotAsset.Value>
         <OutArgument x:TypeArguments="x:String">[OldTimestamp]</OutArgument>
       </ui:GetRobotAsset.Value>
@@ -230,7 +230,7 @@
               <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(Respons, """access_token"":""([^""]*)""").Groups(1).Value]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:SetAsset TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Da der hentes en ny token, sættes denne ind i orchestrator&#xA;" AssetName="KMDAPITokenNovaToFilarkiv" DisplayName="Set Asset" FolderPath="MTM2" sap:VirtualizedContainerService.HintSize="434,251" sap2010:WorkflowViewState.IdRef="SetAsset_2" Value="[out_Token]">
+          <ui:SetAsset TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Da der hentes en ny token, sættes denne ind i orchestrator&#xA;" AssetName="KMDAPITokenNovaToFilarkiv" DisplayName="Set Asset" sap:VirtualizedContainerService.HintSize="434,251" sap2010:WorkflowViewState.IdRef="SetAsset_2" Value="[out_Token]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="CheckIfCaseIsClassified" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="CheckIfCaseIsClassified" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_CaseTitle" Type="InArgument(x:String)" />
     <x:Property Name="in_CaseNumber" Type="InArgument(x:String)" />
@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1228,10895</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1161,5558</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CheckIfCaseIsClassified_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -40,6 +40,12 @@
       <x:String>System.Text.RegularExpressions</x:String>
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -102,9 +108,18 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CheckIfCaseIsClassified" sap:VirtualizedContainerService.HintSize="700,10830" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CheckIfCaseIsClassified" sap:VirtualizedContainerService.HintSize="674,5493" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str1" />
       <Variable x:TypeArguments="x:Int32" Name="str1Length" />
@@ -134,13 +149,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Components\GetFilArkivAccessToken.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="638,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\GetFilArkivAccessToken.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Components\GetFilArkivAccessToken.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="612,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\GetFilArkivAccessToken.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="out_Token">[Token]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="638,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Checker om sagen er fortrolig&quot;]" />
-    <ui:MultipleAssign sap2010:Annotation.AnnotationText="Assigner de forskellige &quot;Blacklistede&quot; ord, som dokumentoplysningerne ikke må indeholde og længden af det specifikke ord." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="638,422" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="612,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Checker om sagen er fortrolig&quot;]" />
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="Assigner de forskellige &quot;Blacklistede&quot; ord, som dokumentoplysningerne ikke må indeholde og længden af det specifikke ord." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="612,422" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -231,7 +246,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:MultipleAssign sap2010:Annotation.AnnotationText="Initializer listen, som skal indeholde de ord/rækker, som har et blacklistet ord. Og pre-assigner bools til False, til senere brug" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="638,422" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="Initializer listen, som skal indeholde de ord/rækker, som har et blacklistet ord. Og pre-assigner bools til False, til senere brug" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="612,422" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -322,7 +337,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each titel" sap:VirtualizedContainerService.HintSize="638,2699" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_CaseTitle.ToString.ToLower().Split(&quot; &quot;c)]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each titel" sap:VirtualizedContainerService.HintSize="612,2699" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_CaseTitle.ToString.ToLower().Split(&quot; &quot;c)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
@@ -505,7 +520,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <If sap2010:Annotation.AnnotationText="If-statement, som tjekker om der er nogen &quot;blacklistede ord&quot;. Hvis der ikke er, forsætter den til at tjekke de næste kriterier. Hvis der er, skal hvert word array tjekkes igennem" Condition="[WordsArrayStr1.Count = 0 and WordsArrayStr2.Count = 0 and WordsArrayStr3.Count = 0 and WordsArrayStr4.Count = 0 and WordsArrayStr5.Count = 0]" sap:VirtualizedContainerService.HintSize="638,5670" sap2010:WorkflowViewState.IdRef="If_7">
+    <If sap2010:Annotation.AnnotationText="If-statement, som tjekker om der er nogen &quot;blacklistede ord&quot;. Hvis der ikke er, forsætter den til at tjekke de næste kriterier. Hvis der er, skal hvert word array tjekkes igennem" Condition="[WordsArrayStr1.Count = 0 and WordsArrayStr2.Count = 0 and WordsArrayStr3.Count = 0 and WordsArrayStr4.Count = 0 and WordsArrayStr5.Count = 0]" sap:VirtualizedContainerService.HintSize="612,334" sap2010:WorkflowViewState.IdRef="If_7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -763,13 +778,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="528,1172" sap2010:WorkflowViewState.IdRef="Sequence_35">
+              <Sequence sap:VirtualizedContainerService.HintSize="376,274" sap2010:WorkflowViewState.IdRef="Sequence_35">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="486,1084" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[WordsArrayStr4]">
+                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="334,186" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[WordsArrayStr4]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="x:String">
                       <ActivityAction.Argument>
@@ -865,23 +880,13 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="https://github.com/cristinegulescu/startUiPathFromSalesforce/blob/master/Leven.txt&#xA;&#xA;Procenten sættes til 81, således der er plads til 2 karakterfejl " Code=" Dim n As Integer = str5.Length&#xD;&#xA;        Dim m As Integer = strControl.Length&#xD;&#xA;        Dim d(n + 1, m + 1) As Integer&#xD;&#xA;&#x9;&#x9;decision =False&#xD;&#xA;&#xD;&#xA;        If n = 0 Then&#xD;&#xA;            nr= m&#xD;&#xA;&#x9;&#x9;Else If m = 0 Then&#xD;&#xA;            nr= n&#xD;&#xA;        Else &#xD;&#xA;        Dim i As Integer&#xD;&#xA;        Dim j As Integer&#xD;&#xA;&#xD;&#xA;        For i = 0 To n&#xD;&#xA;            d(i, 0) = i&#xD;&#xA;        Next&#xD;&#xA;&#xD;&#xA;        For j = 0 To m&#xD;&#xA;            d(0, j) = j&#xD;&#xA;        Next&#xD;&#xA;&#xD;&#xA;        For i = 1 To n&#xD;&#xA;            For j = 1 To m&#xD;&#xA;&#xD;&#xA;                Dim cost As Integer&#xD;&#xA;                If strControl(j - 1) = str5(i - 1) Then&#xD;&#xA;                    cost = 0&#xD;&#xA;                Else&#xD;&#xA;                    cost = 1&#xD;&#xA;                End If&#xD;&#xA;&#xD;&#xA;                d(i, j) = Math.Min(Math.Min(d(i - 1, j) + 1, d(i, j - 1) + 1),&#xD;&#xA;                                   d(i - 1, j - 1) + cost)&#xD;&#xA;            Next&#xD;&#xA;        Next&#xD;&#xA;nr = d(n, m)&#xD;&#xA;End If&#xD;&#xA;If (Math.Truncate((nr * 100) / str5.Length) &lt;= (100-percent)) &#xD;&#xA;&#x9;decision = True&#xD;&#xA;End If" DisplayName="Invoke Code Levenstrin algorithm" sap:VirtualizedContainerService.HintSize="410,252" sap2010:WorkflowViewState.IdRef="InvokeCode_5">
+                        <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="https://github.com/cristinegulescu/startUiPathFromSalesforce/blob/master/Leven.txt&#xA;&#xA;Procenten sættes til 81, således der er plads til 2 karakterfejl " Code=" Dim n As Integer = str5.Length&#xA;        Dim m As Integer = strControl.Length&#xA;        Dim d(n + 1, m + 1) As Integer&#xA;&#x9;&#x9;decision =False&#xA;&#xA;        If n = 0 Then&#xA;            nr= m&#xA;&#x9;&#x9;Else If m = 0 Then&#xA;            nr= n&#xA;        Else &#xA;        Dim i As Integer&#xA;        Dim j As Integer&#xA;&#xA;        For i = 0 To n&#xA;            d(i, 0) = i&#xA;        Next&#xA;&#xA;        For j = 0 To m&#xA;            d(0, j) = j&#xA;        Next&#xA;&#xA;        For i = 1 To n&#xA;            For j = 1 To m&#xA;&#xA;                Dim cost As Integer&#xA;                If strControl(j - 1) = str5(i - 1) Then&#xA;                    cost = 0&#xA;                Else&#xA;                    cost = 1&#xA;                End If&#xA;&#xA;                d(i, j) = Math.Min(Math.Min(d(i - 1, j) + 1, d(i, j - 1) + 1),&#xA;                                   d(i - 1, j - 1) + cost)&#xA;            Next&#xA;        Next&#xA;nr = d(n, m)&#xA;End If&#xA;If (Math.Truncate((nr * 100) / str5.Length) &lt;= (100-percent)) &#xA;&#x9;decision = True&#xA;End If" DisplayName="Invoke Code Levenstrin algorithm" sap:VirtualizedContainerService.HintSize="410,252" sap2010:WorkflowViewState.IdRef="InvokeCode_5">
                           <ui:InvokeCode.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="str5">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str5" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="strControl">
-                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="current5.ToString.ToLower" />
-                            </InArgument>
-                            <OutArgument x:TypeArguments="x:Int32" x:Key="nr">
-                              <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="result" />
-                            </OutArgument>
-                            <OutArgument x:TypeArguments="x:Boolean" x:Key="decision">
-                              <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="ResultBol5" />
-                            </OutArgument>
-                            <InArgument x:TypeArguments="x:Int32" x:Key="percent">
-                              <Literal x:TypeArguments="x:Int32" Value="81" />
-                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="str5">[str5]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="strControl">[current5.ToString.ToLower]</InArgument>
+                            <OutArgument x:TypeArguments="x:Int32" x:Key="nr">[result]</OutArgument>
+                            <OutArgument x:TypeArguments="x:Boolean" x:Key="decision">[ResultBol5]</OutArgument>
+                            <InArgument x:TypeArguments="x:Int32" x:Key="percent">81</InArgument>
                           </ui:InvokeCode.Arguments>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -936,9 +941,9 @@
         </Sequence>
       </If.Else>
     </If>
-    <If Condition="[ResultBol1 = true OrElse ResultBol2 = true OrElse ResultBol3 = True OrElse ResultBol4 = True OrElse ResultBol5 = True]" sap:VirtualizedContainerService.HintSize="638,1012" sap2010:WorkflowViewState.IdRef="If_13">
+    <If Condition="[ResultBol1 = true OrElse ResultBol2 = true OrElse ResultBol3 = True OrElse ResultBol4 = True OrElse ResultBol5 = True]" sap:VirtualizedContainerService.HintSize="612,1011" sap2010:WorkflowViewState.IdRef="If_13">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="534,601" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence sap:VirtualizedContainerService.HintSize="578,829" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="json" />
             <Variable x:TypeArguments="x:Object" Name="CaseStatus" />
@@ -950,52 +955,79 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="492,513" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="15" RetryInterval="00:00:30">
-            <ui:RetryScope.ActivityBody>
-              <ActivityAction>
-                <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,224" sap2010:WorkflowViewState.IdRef="Sequence_15">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="UpdateCaseToClassified.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="UpdateCaseToClassified.xaml">
-                    <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_CaseNumber">
-                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_CaseNumber" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_Token">
-                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Token" />
-                      </InArgument>
-                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_CaseInFilArkiv">
-                        <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="CaseInFilArkiv" />
-                      </OutArgument>
-                      <InArgument x:TypeArguments="x:Boolean" x:Key="in_ResultBol1">
-                        <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ResultBol1" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:Boolean" x:Key="in_ResultBol2">
-                        <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ResultBol2" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:Boolean" x:Key="in_ResultBol3">
-                        <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ResultBol3" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:Boolean" x:Key="in_ResultBol4">
-                        <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ResultBol4" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:Boolean" x:Key="in_ResultBol5">
-                        <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="ResultBol5" />
-                      </InArgument>
-                    </ui:InvokeWorkflowFile.Arguments>
-                  </ui:InvokeWorkflowFile>
-                </Sequence>
-              </ActivityAction>
-            </ui:RetryScope.ActivityBody>
-            <ui:RetryScope.Condition>
-              <ActivityFunc x:TypeArguments="x:Boolean">
-                <ui:CheckTrue DisplayName="Check True" ErrorMessage="Sagen er ikke oprettet endnu" Expression="[CaseInFilArkiv]" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="CheckTrue_1" />
-              </ActivityFunc>
-            </ui:RetryScope.Condition>
-          </ui:RetryScope>
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="536,741" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch.Try>
+              <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="492,513" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="20" RetryInterval="00:00:30">
+                <ui:RetryScope.ActivityBody>
+                  <ActivityAction>
+                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,224" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="UpdateCaseToClassified.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="UpdateCaseToClassified.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_CaseNumber">[in_CaseNumber]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Token">[Token]</InArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_CaseInFilArkiv">[CaseInFilArkiv]</OutArgument>
+                          <InArgument x:TypeArguments="x:Boolean" x:Key="in_ResultBol1">[ResultBol1]</InArgument>
+                          <InArgument x:TypeArguments="x:Boolean" x:Key="in_ResultBol2">[ResultBol2]</InArgument>
+                          <InArgument x:TypeArguments="x:Boolean" x:Key="in_ResultBol3">[ResultBol3]</InArgument>
+                          <InArgument x:TypeArguments="x:Boolean" x:Key="in_ResultBol4">[ResultBol4]</InArgument>
+                          <InArgument x:TypeArguments="x:Boolean" x:Key="in_ResultBol5">[ResultBol5]</InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:RetryScope.ActivityBody>
+                <ui:RetryScope.Condition>
+                  <ActivityFunc x:TypeArguments="x:Boolean">
+                    <ui:CheckTrue DisplayName="Check True" ErrorMessage="Sagen er ikke oprettet endnu" Expression="[CaseInFilArkiv]" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="CheckTrue_1" />
+                  </ActivityFunc>
+                </ui:RetryScope.Condition>
+              </ui:RetryScope>
+            </TryCatch.Try>
+            <TryCatch.Catches>
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="502,578" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ActivityAction x:TypeArguments="s:Exception">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                  </ActivityAction.Argument>
+                  <Sequence sap:VirtualizedContainerService.HintSize="496,509" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="UdviklerMail" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Throw Exception="[new BusinessRuleException(&quot;Robotten fejlede i at klassificerer sagen som fortrolig i Filarkiv&quot;)]" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[UdviklerMail]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">gujc@aarhus.dk</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:SendMail Cc="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" Port="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Bcc="[UdviklerMail]" Body="[&quot;Robotten fejlede i at klassificerer følgende sag som fortrolig i Filarkiv: &quot; +in_CaseNumber+&quot;&lt;br&gt;&lt;br&gt;Med venlig hilsen&lt;br&gt;&lt;br&gt;Teknik &amp; Miljø&lt;br&gt;&lt;br&gt;Digitalisering&lt;br&gt;&lt;br&gt;Aarhus Kommune&quot;]" DisplayName="Send SMTP Mail Message" EnableSSL="True" From="no-reply@aarhus.dk" sap:VirtualizedContainerService.HintSize="434,146" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Name="Aktbob" ReplyTo="[UdviklerMail]" SecureConnection="None" Server="smtp.adm.aarhuskommune.dk" Subject="Robotten fejlede i klassificering af sag som fortrolig" To="[UdviklerMail]">
+                      <ui:SendMail.Files>
+                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
+                      </ui:SendMail.Files>
+                    </ui:SendMail>
+                  </Sequence>
+                </ActivityAction>
+              </Catch>
+            </TryCatch.Catches>
+          </TryCatch>
         </Sequence>
       </If.Then>
       <If.Else>

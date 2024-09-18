@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetCaseUuid" this:GetCaseUuid.in_CaseNumber="S2021-456011" this:GetCaseUuid.in_Token="eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJxN0tmRjAyWFF5UFJUaGM1NWVpSEM3M0lLZjEwdWpPc3FLZkxsV2lMZ0IwIn0.eyJleHAiOjE2OTkzNTU4MTIsImlhdCI6MTY5OTM0ODYxMiwianRpIjoiYTQ2Y2FjNTAtZWVkZi00ZWJhLWIxYzQtYmE5MjA2YjA4OGJlIiwiaXNzIjoiaHR0cHM6Ly9ub3ZhYXV0aC5rbWQuZGsvcmVhbG1zL05vdmFJbnRlZ3JhdGlvbiIsImF1ZCI6Imh0dHBzOi8vbm92YWFwaS5rbWQuZGsiLCJzdWIiOiI3NjBhODU5ZC05ZDQxLTQxMGUtYjU0Mi1iOGIyNTgyZDkxNmIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhYXJodXNfa29tbXVuZSIsImFjciI6IjEiLCJzY29wZSI6ImNsaWVudCIsImNsaWVudElkIjoiYWFyaHVzX2tvbW11bmUiLCJjbGllbnRIb3N0IjoiMTkzLjMzLjE0OC42Iiwia3NwX3VzZXIiOiJhem10bTAxIiwiY2xpZW50QWRkcmVzcyI6IjE5My4zMy4xNDguNiIsImN2ciI6IjU1MTMzMDE4In0.mGIrJD3xr_fudI-TvHR-HozeYCET40OqLHFm5rBB7HMldsIoNlWc-jZNTeTXApx8cQAn5I6Wd2uclSAN1QhrbjT9JdtETy7dqm2Kvurs0oWQSjzwrpXnzRJvaCdeZTzKU-pC8fNeZq5_MR6pewb6PZ6SNfujl-fvARzl-RJ9PPzc7gyYF0U3HTjRf9VhgI8Ykq1oMu3jwPWdjiQlKLcXhfKjWCmS9518GvjKzbJbhKFIAIhtts3kU8jMAVd_fcD1oSoMiEBKAM01NFyvfNnWO-4-JXSDrc5aC01te-PJkjxiwoycYYS6gt0DvY3y0038DqF8S49AxxbAXs1wwm6dJg" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetCaseUuid" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_CaseNumber" Type="InArgument(x:String)" />
     <x:Property Name="out_CaseUuid" Type="OutArgument(x:String)" />
@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1228,1947</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1161,2128</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetCaseUuid_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -106,7 +106,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetCaseUuid" sap:VirtualizedContainerService.HintSize="496,1882" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetCaseUuid" sap:VirtualizedContainerService.HintSize="496,2063" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TransactionID" />
       <Variable x:TypeArguments="x:String" Name="json" />
@@ -120,6 +120,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Henter CaseUuid&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;in_CaseNumber: &quot; + in_CaseNumber]" />
     <Assign sap2010:Annotation.AnnotationText="Opretter guid til transaction ID&#xA;" DisplayName="Assign Transaction ID" sap:VirtualizedContainerService.HintSize="434,124" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[TransactionID]</OutArgument>
@@ -146,7 +147,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[json]" BodyFormat="application/Json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="[in_KMDNovaURL+&quot;/Case/GetList?api-version=1.0-Case&quot;]" sap:VirtualizedContainerService.HintSize="434,70" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="PUT" Result="[Respons]" StatusCode="[Status]" TimeoutMS="30000">
+    <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[json]" BodyFormat="application/Json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="[in_KMDNovaURL+&quot;/Case/GetList?api-version=2.0-Case&quot;]" sap:VirtualizedContainerService.HintSize="434,70" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="PUT" Result="[Respons]" StatusCode="[Status]" TimeoutMS="30000">
       <ui:HttpClient.Attachments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Attachments>
