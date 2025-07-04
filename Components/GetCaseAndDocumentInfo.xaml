@@ -6,11 +6,12 @@
     <x:Property Name="in_CaseNumber" Type="InArgument(x:String)" />
     <x:Property Name="out_CaseTitle" Type="OutArgument(x:String)" />
     <x:Property Name="in_KMDNovaURL" Type="InArgument(x:String)" />
+    <x:Property Name="out_BFENumberBool" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1161,1083</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1514,1083</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetCaseAndDocumentInfo_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,11 +117,24 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetCaseUuid.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Components\GetCaseUuid.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_CaseNumber">[in_CaseNumber]</InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_CaseUuid">[CaseUuid]</OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Token">[Token]</InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_CaseTitle">[CaseTitle]</OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_KMDNovaURL">[in_KMDNovaURL]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_CaseNumber">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_CaseNumber" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_CaseUuid">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="CaseUuid" />
+        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Token">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Token" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_CaseTitle">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="CaseTitle" />
+        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_KMDNovaURL">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_KMDNovaURL" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BFENumberBool">
+          <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_BFENumberBool" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetDocumentInfo_New.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Components\GetDocumentInfo_New.xaml">

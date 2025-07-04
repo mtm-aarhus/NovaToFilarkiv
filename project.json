@@ -8,6 +8,7 @@
     "Selenium.Support": "[4.18.1]",
     "Selenium.WebDriver": "[4.18.1]",
     "SeleniumExtras.WaitHelpers": "[1.0.2]",
+    "System.Text.RegularExpressions": "[4.3.1]",
     "UiPath.Database.Activities": "[1.7.1]",
     "UiPath.Excel.Activities": "[2.20.2]",
     "UiPath.Mail.Activities": "[1.20.0]",
